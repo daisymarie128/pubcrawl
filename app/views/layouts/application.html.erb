@@ -7,8 +7,24 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="container">
+    <div id="main">
+    <header>
+      <nav>
+        <ul>
 
-<%= yield %>
-
+          <li><a href="#">Home</a></li>
+          <li><a href="#users/create">Add User</a></li>
+          <li><a href="#users/list">View Users</a></li>
+          <li><a href="#login">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="content"></div>
+      <%= yield %>
+      leave it alone
+    </div>
+  </div><!--//////////////close main////////-->
+</div><!--//////////////close container////////-->
 </body>
 </html>

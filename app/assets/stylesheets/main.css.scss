@@ -1,0 +1,32 @@
+$yellow-color: #E8C53A;
+
+
+@font-face { font-family: Avenir Next; src: url('Avenir Next.ttc'); }
+
+#container{
+  max-width: 100%;
+  position: relative;
+  background-color: #fff;
+}
+
+#main{
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+header{
+  width: 100%;
+}
+
+nav ul{
+  width: 100%;
+  background-color: $yellow-color;
+  padding: 0;
+  list-style: none;
+}
+
+.pagewrap{
+  width: 100%;
+  padding-top: 5%;
+}
