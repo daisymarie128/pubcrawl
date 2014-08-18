@@ -4,17 +4,24 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    render :json => @user
   end
 
   #create new user: sign up code
   def create
-    @user = User.create user_params
-    render :json => @user
+    @user = User.new user_params
+    @user.password = params[:password]
+    @user.password_confirmation = params[:password_confirmation]
+    if @user.save
+      render :json => @user
+    else
+      render :json => {:errors => @user.errors}
+    end
   end
 
   def update
     @user = User.find params[:id]
-    @user.update(:name => params[:name])
+    @user.update user_params
     render :json => @user
   end
 
@@ -65,7 +72,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:frist_name, :last_name, :username, :email, :avatar, :location, :score, :password, :password_confirmation)
+    params.permit(:first_name, :last_name, :username, :email , :avatar , :location , :score , :password, :password_confirmation)
   end
 
   #chech if the user is logged in. show only their stuff

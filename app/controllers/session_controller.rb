@@ -15,7 +15,7 @@ class SessionController < ApplicationController
       session[:user_id] = user.id
       render :json => @user
     else
-      redirect_to login_path
+      render :json => {crap: 'hataha' }
     end
   end
 

@@ -25,6 +25,24 @@ app.LoginView = Backbone.View.extend({
     // stops the form from submitting params with the button.
     event.preventDefault();
     // saves to the rails database
+    $.ajax('/session', {
+      type: 'post',
+      dataType: 'json',
+      data: {
+        username: $('#username').val(),
+        password: $('#password').val()
+      }
+    }).done(function(){
+      console.log('working?')
+      this.$el.html( loginBar );
+      this.$el.attr('id', 'loginBar');
+      $('#login-functions').html(this.el);
+    })
+    // if (sign in is right){
+    //   app.router.navigate("users/list", true);
+    // }else{
+    //   alert('your a fucking idiot')
+    // }
     // var userLogin = new app.Session({
     //   username: $('#username').val(),
     //   password: $('#password').val()});

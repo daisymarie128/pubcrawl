@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pubcrawl</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="container">
+    <div id="main">
+    <header>
+      <div id="login-functions">
+      </div><!--///////close login-functions/////-->
+      <nav>
+        <ul>
+
+          <li><a href="#">Home</a></li>
+          <li><a href="#users/create">Add User</a></li>
+          <li><a href="#users/list">View Users</a></li>
+          <li><a href="#pub_challenges/create">Create Pub Challenge</a></li>
+          <li><a href="#pub_challenges/list">View Pub Challenges</a></li>
+          <li><a href="#login">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="content"></div>
+      <%= yield %>
+    </div>
+  </div><!--//////////////close main////////-->
+</div><!--//////////////close container////////-->
+</body>
+</html>

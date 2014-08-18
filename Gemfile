@@ -38,6 +38,10 @@ group :development, :test do
   gem 'binding_of_caller'
 end
 
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'cloudinary'
+
 gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password

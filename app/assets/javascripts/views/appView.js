@@ -18,6 +18,10 @@ app.AppView = Backbone.View.extend({
   //
   createUser: function () {
     app.router.navigate("users/create", true);
+  },
+
+  createPubChallenge: function () {
+    app.router.navigate("pub_challenges/create", true);
   }
 
 });
