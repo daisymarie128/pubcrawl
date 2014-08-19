@@ -27,7 +27,7 @@ header{
 
 .title{
   width: 100%;
-  position: absolute;
+  /*position: absolute;*/
   left: 0;
   font-size: 4em;
   font-family: Langdon;
@@ -41,36 +41,38 @@ header{
 }
 
 #login-options {
-  position: absolute;
+  /*position: absolute;*/
   right: 0;
   padding: 1em;
   font-family: Avenir Next;
   font-size: 0.7em;
   text-transform: uppercase;
-  ul{
-    width: 100%;
-    height: inherit;
-    padding: 0;
-    list-style: none;
-  }
-  li{
-    padding: 1em;
-    list-style: none;
-    display: inline;
-    background-color: #000;
-  }
-  li:hover{
-    padding: 1em;
-    background-color: #FFF;
-  }
-  a{
-    color: #FFF;
-    text-decoration: none;
-  }
-  a:hover{
-    color: #000;
-    text-decoration: none;
-  }
+}
+
+#login-options ul{
+  width: 100%;
+  height: inherit;
+  padding: 0;
+  list-style: none;
+}
+
+#login-options li{
+  padding: 1em;
+  list-style: none;
+  display: inline;
+  background-color: #000;
+}
+#login-options li:hover{
+  padding: 1em;
+  background-color: #FFF;
+}
+#login-options a{
+  color: #FFF;
+  text-decoration: none;
+}
+#login-options a:hover{
+  color: #000;
+  text-decoration: none;
 }
 
 nav {
@@ -81,30 +83,30 @@ nav {
   font-family: Avenir Next;
   font-size: 0.7em;
   text-transform: uppercase;
-  ul{
-    width: 100%;
-    height: inherit;
-    padding: 0;
-    list-style: none;
-  }
-  li{
-    padding: 1em;
-    list-style: none;
-    display: inline;
-    background-color: #000;
-  }
-  li:hover{
-    padding: 1em;
-    background-color: #E8C53A;
-  }
-  a{
-    color: #FFF;
-    text-decoration: none;
-  }
-  a:hover{
-    color: #000;
-    text-decoration: none;
-  }
+}
+nav ul{
+  width: 100%;
+  height: inherit;
+  padding: 0;
+  list-style: none;
+}
+nav li{
+  padding: 1em;
+  list-style: none;
+  display: inline;
+  background-color: #000;
+}
+nav li:hover{
+  padding: 1em;
+  background-color: #E8C53A;
+}
+nav a{
+  color: #FFF;
+  text-decoration: none;
+}
+nav a:hover{
+  color: #000;
+  text-decoration: none;
 }
 
 #content{
