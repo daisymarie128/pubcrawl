@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :check_if_logged_in, :except => [:new, :create, :follow, :unfollow]
-  before_action :check_if_admin, :only => [:index]
+  before_action :check_if_logged_in, :except => [:new, :create, :follow, :unfollow, :index]
+  #before_action :check_if_admin, :only => [:index]
 
   def new
     @user = User.new
@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   #create new user: sign up code
   def create
+    binding.pry
     @user = User.new user_params
     @user.password = params[:password]
     @user.password_confirmation = params[:password_confirmation]

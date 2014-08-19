@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140817031558) do
+ActiveRecord::Schema.define(version: 20140819031305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20140817031558) do
     t.string   "image"
     t.string   "description"
     t.string   "badge"
+    t.integer  "pub_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,7 +44,8 @@ ActiveRecord::Schema.define(version: 20140817031558) do
     t.string   "address"
     t.text     "image"
     t.text     "description"
-    t.integer  "user_id"
+    t.string   "email"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,7 +61,9 @@ ActiveRecord::Schema.define(version: 20140817031558) do
     t.string   "score"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_admin"
+    t.boolean  "is_admin",        default: false
+    t.boolean  "is_pub",          default: false
+    t.boolean  "is_pub_verified", default: false
   end
 
 end

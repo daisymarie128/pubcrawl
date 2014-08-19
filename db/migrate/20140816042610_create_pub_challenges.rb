@@ -5,6 +5,7 @@ class CreatePubChallenges < ActiveRecord::Migration
       t.string :image
       t.string :description
       t.string :badge
+      t.integer :pub_id
       t.timestamps
     end
   end

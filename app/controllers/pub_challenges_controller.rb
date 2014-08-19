@@ -6,8 +6,13 @@ class PubChallengesController < ApplicationController
 
   #create new user: sign up code
   def create
-    @pub_challenge = PubChallenge.create({:name => params[:name], :image => params[:image], :description => params[:description], :badge => params[:badge]})
-    render :json => @pub_challenge
+    @pub_challenge = PubChallenge.new pub_challenge_params
+    @pub_challenge.pub_id = @current_pub.id
+    if @pub_challenge.save
+      render :json => @pub_challenge
+    else
+      render :json => {:errors => @pub_challenge.errors}
+    end
   end
 
   def update
@@ -18,13 +23,15 @@ class PubChallengesController < ApplicationController
 
   #show individual users while signed in as current user
   def show
-    @pub_challenge = PubChallenge.where(:name => params[:id]).first
+    # @pub_challenge = PubChallenge.where(:name => params[:id]).first
+    @pub_challenge = PubChallenge.find params[:id]
   end
 
 
   #current users page.
   def index
     @pub_challenges = PubChallenge.all
+    # @pub_challenges = @current_pub.pub_challenges
     respond_to do |format|
       format.html {}
       format.json { render :json => @pub_challenges }
@@ -36,8 +43,8 @@ class PubChallengesController < ApplicationController
   end
 
   private
-  def pub_params
-    params.require(:pubs).permit(:name, :image, :image_cache, :description, :badge)
+  def pub_challenge_params
+    params.permit(:name, :image, :image_cache, :description, :badge)
   end
 
 end

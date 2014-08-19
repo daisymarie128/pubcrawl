@@ -1,10 +1,10 @@
 var app = app || {};
 
-app.UserView = Backbone.View.extend({
+app.CreatePub = Backbone.View.extend({
   tagName: 'div',
 
   events: {
-    'click button': 'createUser'
+    'click button': 'createPub'
   },
 
   initialize: function () {
@@ -15,31 +15,32 @@ app.UserView = Backbone.View.extend({
   },
 
   render: function () {
-    var userView = Handlebars.compile(app.templates.userView);
-    this.$el.html( userView );
-    this.$el.attr('id', 'user-view');
+    var createPub = Handlebars.compile(app.templates.createPub);
+    this.$el.html( createPub );
+    this.$el.attr('id', 'create-pub');
     $('#content').html(this.el);
   },
 
-  createUser: function () {
+  createPub: function () {
     // stops the form from submitting params with the button.
     event.preventDefault();
     // saves to the rails database
     // console.log($('#password').val())
-    var newUser = new app.User({
-      first_name: $('#first_name').val(),
-      last_name: $('#last_name').val(),
-      username: $('#username').val(),
+    var newPub = new app.Pub({
+      name: $('#name').val(),
+      address: $('#address').val(),
       email: $('#email').val(),
+      image: $('#image').val(),
+      description: $('#description').val(),
       password: $('#password').val(),
       password_confirmation: $('#confirm_password').val(),
-      avatar: $('#avatar').val(),
-      location: $('#location').val()});
-    newUser.save();
+      is_pub: true
+    });
+    newPub.save();
     // adds to the backbone memory (browser)
     // app.users.add(newUser);
     // Send view to a users list
-    app.router.navigate("users/list", true);
+    app.router.navigate("pubs/list", true);
   }
 
 });

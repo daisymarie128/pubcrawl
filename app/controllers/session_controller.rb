@@ -7,16 +7,30 @@ class SessionController < ApplicationController
   end
 
   def create
+    # binding.pry
     # raise params.inspect
     #user sign in.
     #creates new session.
+    result = nil
     user = User.find_by(:username => params[:username])
-    if user.present? && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      render :json => @user
+    pub = Pub.find_by(:name => params[:username])
+    # binding.pry
+    if (user.present? || pub.present?) && (user.try(:authenticate,(params[:password])) || pub.try(:authenticate, (params[:password])))
+      if user.try(:authenticate,(params[:password]))
+        session[:user_id] = user.id
+        result = user
+      end
+      if pub.try(:authenticate, (params[:password]))
+      session[:user_id] = pub.id
+      # binding.pry
+      result = pub
+      end
     else
-      render :json => {crap: 'hataha' }
+      user = nil
     end
+    # binding.pry
+    render :json => result
+
   end
 
   def destroy
@@ -30,6 +44,10 @@ class SessionController < ApplicationController
   #loads the smart navs
   def check_if_logged_in
     redirect_to(new_user_path) if @current_user.nil?
+  end
+
+  def check_if_pub
+    redirect_to(root_path) unless @current_user.is_pub?
   end
 
   #loads the smart navs

@@ -6,16 +6,13 @@ app.Router = Backbone.Router.extend({
     'login': 'login',
     'users/create': 'createUser',
     'users/list': 'viewUsers',
+    'pubs/create': 'createPub',
+    'pubs/list': 'viewPubs',
     'pub_challenges/create': 'createPubChallenges',
     'pub_challenges/list': 'pubChallengesListView'
   },
 
   initialize: function () {
-    app.users = new app.Users();
-    app.users.fetch();
-
-    app.pubChallenges = new app.PubChallenges();
-    app.pubChallenges.fetch();
   },
 
   index: function () {
@@ -34,6 +31,16 @@ app.Router = Backbone.Router.extend({
   viewUsers: function () {
     var usersListView = new app.UsersListView();
     usersListView.render();
+  },
+
+  createPub: function () {
+    var createPub = new app.CreatePub();
+    createPub.render();
+  },
+
+  viewPubs: function () {
+    var pubsListView = new app.PubsListView();
+    pubsListView.render();
   },
 
   createPubChallenges: function () {

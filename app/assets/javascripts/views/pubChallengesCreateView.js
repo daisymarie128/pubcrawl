@@ -26,13 +26,13 @@ app.PubChallengesCreateView = Backbone.View.extend({
     event.preventDefault();
     // saves to the rails database
     var newPubChallenge = new app.PubChallenge({
-      name: $('#first_name').val(),
-      image: $('#last_name').val(),
-      description: $('#username').val(),
-      badge: $('#email').val()});
+      name: $('#name').val(),
+      image: $('#image').val(),
+      description: $('#description').val(),
+      badge: $('#badge').val()});
     newPubChallenge.save();
     // Send view to a users list
-    app.router.navigate("pub_challenge/list", true);
+    app.router.navigate("pub_challenges/list", true);
   }
 
 });

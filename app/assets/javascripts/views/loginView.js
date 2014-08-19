@@ -33,10 +33,12 @@ app.LoginView = Backbone.View.extend({
         password: $('#password').val()
       }
     }).done(function(){
+      app.router.navigate("users/list", true);
       console.log('working?')
       this.$el.html( loginBar );
       this.$el.attr('id', 'loginBar');
       $('#login-functions').html(this.el);
+
     })
     // if (sign in is right){
     //   app.router.navigate("users/list", true);

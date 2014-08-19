@@ -6,8 +6,13 @@ class PubsController < ApplicationController
 
   #create new user: sign up code
   def create
-    @pub = Pub.create pub_params
-    render :json => @pub
+    # binding.pry
+    @pub = Pub.new pub_params
+    if @pub.save
+      render :json => @pub
+    else
+      render :json => {:errors => @pub.errors}
+    end
   end
 
   def update
@@ -37,7 +42,7 @@ class PubsController < ApplicationController
 
   private
   def pub_params
-    params.require(:pubs).permit(:name, :address, :image, :description, :user_id)
+    params.permit(:name, :email, :password, :address, :image, :description)
   end
 
 end

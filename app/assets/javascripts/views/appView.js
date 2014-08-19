@@ -20,6 +20,10 @@ app.AppView = Backbone.View.extend({
     app.router.navigate("users/create", true);
   },
 
+  createPub: function () {
+    app.router.navigate("pubs/create", true);
+  },
+
   createPubChallenge: function () {
     app.router.navigate("pub_challenges/create", true);
   }

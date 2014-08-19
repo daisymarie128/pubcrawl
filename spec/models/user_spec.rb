@@ -13,7 +13,9 @@
 #  score           :string(255)
 #  created_at      :datetime
 #  updated_at      :datetime
-#  is_admin        :boolean
+#  is_admin        :boolean          default(FALSE)
+#  is_pub          :boolean          default(FALSE)
+#  is_pub_verified :boolean          default(FALSE)
 #
 
 require 'rails_helper'

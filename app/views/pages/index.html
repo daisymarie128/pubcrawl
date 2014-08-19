@@ -1,3 +1,5 @@
+<!--/////////////////////////////////////////////login bar template ////////////-->
+
 <script type='text/template' id='login-bar-template'>
   <a href="#"><div class="login-button">
     LOGIN
@@ -7,38 +9,41 @@
   </div></a><!--////////close logout-button ///-->
 </script>
 
+<!--/////////////////////////////////////////////user template ////////////-->
 
 <script type='text/template' id='user-template'>
   <h2>Create User</h2>
   <form id='create-user-form' action='#'>
 
-    <label for='first_name'>First Name: </label>
+    <label for='first_name'>First Name: </label><br>
     <input type='text' id='first_name' autofocus='true'>
-
-    <label for='last_name'>Last Name: </label>
+    <br>
+    <label for='last_name'>Last Name: </label><br>
     <input type='text' id='last_name'>
-
-    <label for='username'>Username: </label>
+    <br>
+    <label for='username'>Username: </label><br>
     <input type='text' id='username'>
-
-    <label for='email'>Email: </label>
+    <br>
+    <label for='email'>Email: </label><br>
     <input type='email' id='email'>
-
-    <label for='avatar'>Avatar: </label>
-    <input type='avatar' id='avatar'>
-
-    <label for='location'>Location: </label>
-    <input type='location' id='location'>
-
-    <label for='password'>Password: </label>
-    <input type='text' id='password'>
-
-    <label for='password_confirmation'>Confirm password: </label>
-    <input type='text' id='password_confirmation'>
-
+    <br>
+    <label for='avatar'>Avatar: </label><br>
+    <input type='text' id='avatar'>
+    <br>
+    <label for='location'>Location: </label><br>
+    <input type='text' id='location'>
+    <br>
+    <label for='password'>Password: </label><br>
+    <input type='password' id='password'>
+    <br>
+    <label for='password_confirmation'>Confirm password: </label><br>
+    <input type='password' id='password_confirmation'>
+    <br>
     <button>Create</button>
   </form>
 </script>
+
+<!--/////////////////////////////////////////////user list template ////////////-->
 
 <script type='text/template' id='users-list-template'>
   <h2>List of Users</h2>
@@ -50,10 +55,58 @@
         <li>{{email}}</li>
         <li>{{avatar}}</li>
         <li>{{location}}</li>
-        <li>{{password}}</li>
+        <li>{{score}}</li>
       {{/each}}
     </ul>
 </script>
+
+<!--/////////////////////////////////////////////create pub template ////////////-->
+
+<script type='text/template' id='create-pub-template'>
+  <h2>Create Pub</h2>
+  <form id='create-pub-form' action='#'>
+
+    <label for='name'>Pub Name: </label><br>
+    <input type='text' id='name' autofocus='true'><br>
+    <br>
+    <label for='address'>Last Name: </label><br>
+    <input type='text' id='last_name'>
+    <br>
+    <label for='image'>Image: </label><br>
+    <input type='text' id='image'>
+    <br>
+    <label for='email'>Email: </label><br>
+    <input type='email' id='email'>
+    <br>
+    <label for='description'>Description: </label><br>
+    <textarea type='textarea' rows="5" id='description'></textarea>
+    <br>
+    <label for='password'>Password: </label><br>
+    <input type='password' id='password'>
+    <br>
+    <label for='password_confirmation'>Confirm password: </label><br>
+    <input type='password' id='password_confirmation'>
+    <br>
+    <button>Create Pub</button>
+  </form>
+</script>
+
+<!--/////////////////////////////////////////////user list template ////////////-->
+
+<script type='text/template' id='pubs-list-template'>
+  <h2>List of Pubs</h2>
+    <ul>
+      {{#each pubs}}
+        <li>{{name}}</li>
+        <li>{{address}}</li>
+        <li>{{image}}</li>
+        <li>{{email}}</li>
+        <li>{{description}}</li>
+      {{/each}}
+    </ul>
+</script>
+
+<!--/////////////////////////////////////////////login template ////////////-->
 
 <script type='text/template' id='login-template'>
 
@@ -72,9 +125,9 @@
 
   <h3>SIGN IN:</h3>
 <form id='login' action='#'>
-<label for='username'>Username: </label>
+<label for='username'>Username: </label><br>
     <input type='text' id='username'>
-<label for='password'>Password: </label>
+<label for='password'>Password: </label><br>
     <input type='password' id='password'>
 
 <button>Login In</button>
@@ -84,25 +137,29 @@
 </div><!-- /////// close loginpage //////-->
 </script>
 
+<!--/////////////////////////////////////////////pub challenge template ////////////-->
+
 <script type='text/template' id='pub-challenge-template'>
   <h2>Create Pub Challenge</h2>
   <form id='create-pub-challenge-form' action='#'>
 
-    <label for='name'>Name: </label>
+    <label for='name'>Name: </label><br>
     <input type='text' id='name' autofocus='true'>
-
-    <label for='image'>Image: </label>
+    <br>
+    <label for='image'>Image: </label><br>
     <input type='text' id='image'>
-
-    <label for='description'>Description: </label>
+    <br>
+    <label for='description'>Description: </label><br>
     <input type='text' id='description'>
-
-    <label for='badge'>Badge: </label>
+    <br>
+    <label for='badge'>Badge: </label><br>
     <input type='email' id='badge'>
-
+    <br>
     <button>Create Pub Challenge</button>
   </form>
 </script>
+
+<!--/////////////////////////////////////////////pub challenge list template ////////////-->
 
 <script type='text/template' id='pub-challenge-list-template'>
   <h2>List of Pub Challenges</h2>

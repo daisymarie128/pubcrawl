@@ -5,7 +5,8 @@ class CreatePubs < ActiveRecord::Migration
       t.string :address
       t.text :image
       t.text :description
-      t.integer :user_id
+      t.string :email
+      t.string :password_digest
       t.timestamps
     end
   end
