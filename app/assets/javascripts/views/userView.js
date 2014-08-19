@@ -32,7 +32,7 @@ app.UserView = Backbone.View.extend({
       username: $('#username').val(),
       email: $('#email').val(),
       password: $('#password').val(),
-      password_confirmation: $('#confirm_password').val(),
+      password_confirmation: $('#password_confirmation').val(),
       avatar: $('#avatar').val(),
       location: $('#location').val()});
     newUser.save();
