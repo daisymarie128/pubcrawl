@@ -5,36 +5,27 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyAAiCRdJuc3KbZmfKzLhPkm4DAoG5-7lcA" %>
 </head>
 <body>
   <div id="container">
     <div id="main">
     <header>
       <div class="title">
-      <span>pubcrawl</span>
-    </div><!--///////////////// close title /////-->
+        <span>pubcrawl</span>
+      </div><!--///////////////// close title /////-->
+
       <div id="login-functions">
       </div><!--///////close login-functions/////-->
-      <div id="login-bar">
-        <div id="login-options">
-          <ul>
-            <a href="#login"><li>Login</li></a>
-          </ul>
-        </div><!--////////////close login-optins nav /////////-->
-      </div><!--/////////////close login-bar///-->
-      <nav>
-        <ul>
 
-          <a href="#"><li>Home</li></a>
-          <a href="#users/create"><li>Sign up as User</li></a>
-          <a href="#pubs/create"><li>Sign up as Pub</li></a>
-          <a href="#users/list"><li>View Users</li></a>
-          <a href="#pubs/list"><li>View Pubs</li></a>
-          <a href="#pub_challenges/create"><li>Create Pub Challenge</li></a>
-          <a href="#pub_challenges/list"><li>View Pub Challenges</li></a>
-        </ul>
-      </nav>
+      <div id="user-bar">
+      </div><!--/////////////close login-bar///-->
+
+      <div id="site-navigation-bar">
+      </div><!--/////////////close site-navigation-bar///-->
+
     </header>
+
     <div id="content"></div>
       <%= yield %>
     </div>

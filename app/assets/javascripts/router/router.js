@@ -9,10 +9,16 @@ app.Router = Backbone.Router.extend({
     'pubs/create': 'createPub',
     'pubs/list': 'viewPubs',
     'pub_challenges/create': 'createPubChallenges',
-    'pub_challenges/list': 'pubChallengesListView'
+    'pub_challenges/list': 'pubChallengesListView',
+    'pubs/find_pub': 'findPubView'
   },
 
   initialize: function () {
+    var userNavView = new app.UserNavView();
+    userNavView.render();
+
+    var siteNavView = new app.SiteNavView();
+    siteNavView.render();
   },
 
   index: function () {
@@ -56,6 +62,12 @@ app.Router = Backbone.Router.extend({
   login: function () {
     var loginView = new app.LoginView();
     loginView.render();
+  },
+
+  findPubView: function () {
+    var findPubView = new app.FindPubView();
+    findPubView.render();
+    findPubView.display_map(-33.87, 151.21, 12);
   }
 });
 

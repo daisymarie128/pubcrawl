@@ -32,13 +32,20 @@ app.LoginView = Backbone.View.extend({
         username: $('#username').val(),
         password: $('#password').val()
       }
-    }).done(function(){
+    }).done(function(response){
+      console.log('login got', response);
+      if (response.type == 'pub') {
+        app.currentUser = response.user;
+        app.currentUser.type = 'pub'
+      } else if (response.type == 'user') {
+        app.currentUser = response.user;
+        app.currentUser.type = 'user'
+      } else {
+        alert('Invalid login');
+        return;
+      }
       app.router.navigate("users/list", true);
       console.log('working?')
-      // this.$el.html( loginBar );
-      // this.$el.attr('id', 'loginBar');
-      // $('#login-functions').html(this.el);
-
     })
     // if (sign in is right){
     //   app.router.navigate("users/list", true);

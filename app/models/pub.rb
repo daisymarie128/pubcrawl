@@ -15,6 +15,6 @@
 
 class Pub < ActiveRecord::Base
   has_secure_password
-  # mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader
   has_many :pub_challenges
 end

@@ -1,12 +1,41 @@
 <!--/////////////////////////////////////////////login bar template ////////////-->
 
 <script type='text/template' id='login-bar-template'>
-  <a href="#"><div class="login-button">
-    LOGIN
-  </div></a><!--////////close login-button ///-->
-  <a href="#"><div class="logout-button">
-    LOGOUT
-  </div></a><!--////////close logout-button ///-->
+  <a href="#login"><li>Login</li></a>
+  <a href="#users/create"><li>Sign up as User</li></a>
+  <a href="#pubs/create"><li>Sign up as Pub</li></a>
+</script>
+
+<!--/////////////////////////////////////////////logged in bar template ////////////-->
+
+<script type='text/template' id='logged-in-bar-template'>
+  {{#each users}}
+    <li><h1>{{username}}</h1></li>
+  {{/each}}
+  <a href="#"><li>Home</li></a>
+  <a href="#logout"><li>Logout</li></a>
+
+</script>
+
+<!--/////////////////////////////////////////////user nav bar template ////////////-->
+
+<script type='text/template' id='user-nav-bar-template'>
+  <a href="#users/list"><li>View Top Scorers</li></a>
+  <a href="#pubs/list"><li>View Pubs</li></a>
+  <a href="#pubs/find_pub"><li>Find a Pub</li></a>
+</script>
+
+<!--/////////////////////////////////////////////login bar template ////////////-->
+
+<script type='text/template' id='pub-nav-bar-template'>
+  <nav>
+    <ul>
+      <a href="#users/list"><li>View Your Top Users</li></a>
+      <a href="#pubs/list"><li>View Pubs</li></a>
+      <a href="#pub_challenges/create"><li>Create Pub Challenge</li></a>
+      <a href="#pub_challenges/list"><li>View Pub Challenges</li></a>
+    </ul>
+  </nav>
 </script>
 
 <!--/////////////////////////////////////////////user template ////////////-->
@@ -73,7 +102,8 @@
     <input type='text' id='last_name'>
     <br>
     <label for='image'>Image: </label><br>
-    <input type='text' id='image'>
+    <input type='file' id='image'>
+    <input type='hidden' id='image_cache'>
     <br>
     <label for='email'>Email: </label><br>
     <input type='email' id='email'>
@@ -99,7 +129,7 @@
       {{#each pubs}}
         <li>{{name}}</li>
         <li>{{address}}</li>
-        <li>{{image}}</li>
+        <li><img src="{{image}}"></li>
         <li>{{email}}</li>
         <li>{{description}}</li>
       {{/each}}
@@ -124,14 +154,15 @@
 <div id="login">
 
   <h3>SIGN IN:</h3>
-<form id='login' action='#'>
-<label for='username'>Username: </label><br>
-    <input type='text' id='username'>
-<label for='password'>Password: </label><br>
-    <input type='password' id='password'>
+    <form id='login' action='#'>
+      <label for='username'>Username: </label><br>
+      <input type='text' id='username'>
+      <label for='password'>Password: </label><br>
+      <input type='password' id='password'>
 
-<button>Login In</button>
-</form>
+      <button>Login In</button>
+    </form>
+
 </div><!-- /////// close login //////-->
 
 </div><!-- /////// close loginpage //////-->
@@ -148,6 +179,7 @@
     <br>
     <label for='image'>Image: </label><br>
     <input type='text' id='image'>
+    <input type='hidden' id='image_cache'>
     <br>
     <label for='description'>Description: </label><br>
     <input type='text' id='description'>
@@ -171,4 +203,10 @@
         <li>{{badge}}</li>
       {{/each}}
     </ul>
+</script>
+
+<script type='text/template' id='find-pub-template'>
+  <h2>Find Pub</h2>
+    <div id="map_canvas">
+    </div><!--///////////////////// close map ///////////////////////////////////////////////-->
 </script>

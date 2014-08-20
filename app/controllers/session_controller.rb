@@ -19,17 +19,23 @@ class SessionController < ApplicationController
       if user.try(:authenticate,(params[:password]))
         session[:user_id] = user.id
         result = user
+        type = :user
       end
       if pub.try(:authenticate, (params[:password]))
       session[:user_id] = pub.id
       # binding.pry
       result = pub
+      type = :pub
       end
     else
       user = nil
+      type = :invalid
     end
     # binding.pry
-    render :json => result
+    render :json => {
+      :user => result,
+      :type => type
+    }
 
   end
 
