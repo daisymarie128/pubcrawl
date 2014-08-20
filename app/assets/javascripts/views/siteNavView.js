@@ -16,7 +16,7 @@ app.SiteNavView = Backbone.View.extend({
   },
 
   render: function () {
-    if (user_is_pub){
+    if (app.currentUser.type === 'pub'){
       var pubNavBar = Handlebars.compile(app.templates.pubNavBar);
       $('#site-navigation-bar').append( pubNavBar );
     }else{
