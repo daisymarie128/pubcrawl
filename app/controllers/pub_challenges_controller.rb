@@ -2,6 +2,7 @@ class PubChallengesController < ApplicationController
 
   def new
     @pub_challenge = PubChallenge.new
+    render :json => @user
   end
 
   #create new user: sign up code
