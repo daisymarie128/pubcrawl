@@ -26,8 +26,8 @@ app.PubChallengesListView = Backbone.View.extend({
 
 
     var pubChallengesListView = Handlebars.compile(app.templates.pubChallengesListView);
-    this.$el.html( pubChallengesListView({users: app.users.toJSON()}) );
-    this.$el.attr('id', 'pub-challenges-view');
+    list.$el.html( pubChallengesListView() );
+    list.$el.attr('id', 'pub-challenges-view');
     $('#content').append( this.el );
     })
   }

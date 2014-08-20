@@ -32,6 +32,7 @@ class SessionController < ApplicationController
       type = :invalid
     end
     # binding.pry
+    @current_user = (user || pub)
     render :json => {
       :user => result,
       :type => type

@@ -7,7 +7,7 @@ class PubChallengesController < ApplicationController
   #create new user: sign up code
   def create
     @pub_challenge = PubChallenge.new pub_challenge_params
-    @pub_challenge.pub_id = @current_pub.id
+    @pub_challenge.pub_id = @current_user.id
     if @pub_challenge.save
       render :json => @pub_challenge
     else

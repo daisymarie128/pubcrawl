@@ -29,3 +29,7 @@ input[name=commit]{
     -webkit-appearance:none;
 }
 
+a{
+    color: #000;
+}
+

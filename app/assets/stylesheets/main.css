@@ -119,3 +119,14 @@ nav a:hover{
   width: 500px;
   height: 500px;
 }
+
+
+/*//////////////////////////////user nav/////////*/
+
+#user-bar{
+  width: 100%;
+}
+
+ a{
+  color: #000;
+}
