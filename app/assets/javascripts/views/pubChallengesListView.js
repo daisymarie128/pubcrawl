@@ -16,19 +16,19 @@ app.PubChallengesListView = Backbone.View.extend({
 
   render: function () {
 
-    list = this
-    var pubChallengesTemplate = Handlebars.compile(app.templates.pubChallengesListView);
-    app.pubChallenges.fetch().done(function(){
-      console.log( app.pubChallenges )
-      list.$el.html( pubChallengesTemplate({pub_challenges: app.pubChallenges.toJSON()}) );
-      list.$el.attr('id', 'pub-challenges-view');
-      $('#content').append( list.$el );
+    // list = this
+    // var pubChallengesTemplate = Handlebars.compile(app.templates.pubChallengesListView);
+    // app.pubChallenges.fetch().done(function(){
+    //   console.log( app.pubChallenges )
+    //   list.$el.html( pubChallengesTemplate({pub_challenges: app.pubChallenges.toJSON()}) );
+    //   list.$el.attr('id', 'pub-challenges-view');
+    //   $('#content').append( list.$el );
 
 
+    console.log('nothing ever works')
     var pubChallengesListView = Handlebars.compile(app.templates.pubChallengesListView);
-    list.$el.html( pubChallengesListView() );
-    list.$el.attr('id', 'pub-challenges-view');
+    this.$el.html( pubChallengesListView({pubChallenges: app.pubChallenges.toJSON()}) );
+    this.$el.attr('id', 'pub-challenges-view');
     $('#content').append( this.el );
-    })
   }
 });
