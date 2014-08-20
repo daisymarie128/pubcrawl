@@ -2,7 +2,6 @@ class AchievmentsController < ApplicationController
 
 
   def index
-    #@works = Work.all
     @achievments = @current_user.achievments
   end
 
@@ -11,10 +10,9 @@ class AchievmentsController < ApplicationController
   end
 
   def create
-    @achievment = Achievment.new work_params
+    @achievment = Achievment.new achievment_params
     @achievment.user_id = @current_user.id
     @achievment.save
-    redirect_to works_path
   end
 
   def welcome
@@ -25,16 +23,6 @@ class AchievmentsController < ApplicationController
     @achievment = Achievment.find params[:id]
     @achievment.likes.new
     @achievment.save
-    # #MOST OF THIS SHIT IS WRONG DELETE IT (next three lines)
-    # @likes = []
-    # @liker = @current_user
-    # @likes << @liker
-    # @work.likes +=1
-    # @work.save
-    # @like = nil
-    # @like = @like + 1
-    # @likes = like.count
-    redirect_to '/explore'
   end
 
 
@@ -46,11 +34,10 @@ class AchievmentsController < ApplicationController
   def destroy
     @achievment = Achievment.find params[:id]
     @achievment.destroy
-    redirect_to works_path
   end
 
     private
-    def work_params
+    def achievment_params
     params.require(:achievment).permit(:pub_challenges)
     end
 
