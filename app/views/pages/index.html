@@ -128,10 +128,9 @@
     <ul>
       {{#each pubs}}
         <div class="pub-name"><li>{{name}}</li></div>
-        <li>{{address}}</li>
-        <li><img src="{{image}}"></li>
-        <li>{{email}}</li>
-        <li>{{description}}</li>
+        <div class="pub-address"><li>{{address}}</li></div>
+        <div class="pub-image"><li><img src="{{image}}"></li></div>
+        <div class="pub-description"><li>{{description}}</li></div>
       {{/each}}
     </ul>
 </script>
