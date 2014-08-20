@@ -11,6 +11,7 @@ $(document).ready(function () {
     pubsListView: $('#pubs-list-template').html(),
     loginView: $('#login-template').html(),
     createPubChallengeView: $('#pub-challenge-template').html(),
+    addTask: $('#new-task-template').html(),
     pubChallengesListView: $('#pub-challenge-list-template').html(),
     findPubView: $('#find-pub-template').html()
   }
@@ -24,20 +25,6 @@ $(document).ready(function () {
   app.pubChallenges = new app.PubChallenges();
   var challengeRequest = app.pubChallenges.fetch();
 
-  // app.current_user = null;
-  //   $.ajax('http://fierce-river-3029.herokuapp.com/users.json', {
-  //     type: 'get',
-  //     dataType: 'json',
-  //     data: {
-  //       user: is_pub
-  //       // app.current_user = data.user
-  //     }
-  //   }
-
-
-
-
-    // app.current_user.role
 
 
   $.when(userRequest, challengeRequest, pubRequest).done(function () {

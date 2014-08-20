@@ -9,20 +9,21 @@ app.SiteNavView = Backbone.View.extend({
   },
 
   initialize: function () {
-    if (app.currentView) {
-      app.currentView.remove();
-    }
-    app.currentView = this;
+    // LET'S MAYBE HANG ONTO THIS VIEW HUH?
+    // if (app.currentView) {
+    //   app.currentView.remove();
+    // }
+    // app.currentView = this;
   },
 
   render: function () {
-    if (app.currentUser.type === 'pub'){
+    if (app.currentUser && app.currentUser.type === 'pub'){
+      console.log('is this workingggggg')
       var pubNavBar = Handlebars.compile(app.templates.pubNavBar);
-      $('#site-navigation-bar').append( pubNavBar );
+      $('#site-navigation-bar').html( pubNavBar() );
     }else{
       var userNavBar = Handlebars.compile(app.templates.userNavBar);
-      $('#site-navigation-bar').append( userNavBar );
+      $('#site-navigation-bar').html( userNavBar() );
     }
-
   }
 });

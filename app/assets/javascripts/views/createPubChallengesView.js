@@ -4,7 +4,8 @@ app.PubChallengesCreateView = Backbone.View.extend({
   tagName: 'div',
 
   events: {
-    'click button': 'createPubChallenge'
+    'click #create-challenge': 'createPubChallenge',
+    'click #add-task': 'addTask'
   },
 
   initialize: function () {
@@ -29,11 +30,22 @@ app.PubChallengesCreateView = Backbone.View.extend({
       name: $('#name').val(),
       image: $('#image').val(),
       description: $('#description').val(),
-      badge: $('#badge').val()
+      badge: $('#badge').val(),
+      pointValue: $('#point-value').val(),
+      taskName: $('#taskname').val()
     });
     newPubChallenge.save();
     // Send view to a users list
     app.router.navigate("pub_challenges/list", true);
+  },
+
+  addTask: function () {
+    // stops the form from submitting params with the button.
+    event.preventDefault();
+    // saves to the rails database
+    var addTask = Handlebars.compile(app.templates.addTask);
+      $('#pub-challenge-view').append( addTask );
   }
+
 
 });

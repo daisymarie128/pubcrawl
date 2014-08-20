@@ -98,8 +98,8 @@
     <label for='name'>Pub Name: </label><br>
     <input type='text' id='name' autofocus='true'><br>
     <br>
-    <label for='address'>Last Name: </label><br>
-    <input type='text' id='last_name'>
+    <label for='address'>Address: </label><br>
+    <input type='text' id='address'>
     <br>
     <label for='image'>Image: </label><br>
     <input type='file' id='image'>
@@ -127,7 +127,7 @@
   <h2>List of Pubs</h2>
     <ul>
       {{#each pubs}}
-        <li>{{name}}</li>
+        <div class="pub-name"><li>{{name}}</li></div>
         <li>{{address}}</li>
         <li><img src="{{image}}"></li>
         <li>{{email}}</li>
@@ -174,21 +174,48 @@
   <h2>Create Pub Challenge</h2>
   <form id='create-pub-challenge-form' action='#'>
 
-    <label for='name'>Name: </label><br>
+    <label for='name'>Name Your Challenge: </label>
+    <br>
     <input type='text' id='name' autofocus='true'>
     <br>
-    <label for='image'>Image: </label><br>
-    <input type='text' id='image'>
-    <input type='hidden' id='image_cache'>
+    <label for='image'>Image: </label>
     <br>
-    <label for='description'>Description: </label><br>
+    <input type='text' id='image'>
+    // <input type='hidden' id='image_cache'>
+    <br>
+    <label for='description'>Description: </label>
+    <br>
     <input type='text' id='description'>
     <br>
-    <label for='badge'>Badge: </label><br>
+    <label for='badge'>Badge: </label>
+    <br>
     <input type='email' id='badge'>
     <br>
-    <button>Create Pub Challenge</button>
+    <label for='point_value'>Point Value: </label>
+    <br>
+    <select name="Point Value" id="point-value">
+      <option value="5">Five</option>
+      <option value="10">Ten</option>
+      <option value="20">Twenty</option>
+      <option value="30">Thirty</option>
+    </select>
+    <br>
+    <button id="add-task">Add Task</button>
+    <br>
+    <label for='taskname'>Task: </label>
+    <br>
+    <input type='text' id='taskname'>
+    <br>
+    <button id="create-challenge">Create Pub Challenge</button>
   </form>
+</script>
+
+<!--/////////////////////////////////////////////new task pub challenge template ////////////-->
+
+<script type='text/template' id='new-task-template'>
+  <label for='taskname'>Task: </label>
+    <br>
+    <input type='text' id='taskname'>
 </script>
 
 <!--/////////////////////////////////////////////pub challenge list template ////////////-->

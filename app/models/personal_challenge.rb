@@ -10,6 +10,6 @@
 #  user_id     :integer
 #
 
-class PersonalChallenges < ActiveRecord::Base
+class PersonalChallenge < ActiveRecord::Base
   belongs_to :user
 end

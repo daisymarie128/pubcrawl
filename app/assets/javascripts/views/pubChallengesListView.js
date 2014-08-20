@@ -15,6 +15,7 @@ app.PubChallengesListView = Backbone.View.extend({
   },
 
   render: function () {
+
     list = this
     var pubChallengesTemplate = Handlebars.compile(app.templates.pubChallengesListView);
     app.pubChallenges.fetch().done(function(){
@@ -22,6 +23,12 @@ app.PubChallengesListView = Backbone.View.extend({
       list.$el.html( pubChallengesTemplate({pub_challenges: app.pubChallenges.toJSON()}) );
       list.$el.attr('id', 'pub-challenges-view');
       $('#content').append( list.$el );
+
+
+    var pubChallengesListView = Handlebars.compile(app.templates.pubChallengesListView);
+    this.$el.html( pubChallengesListView({users: app.users.toJSON()}) );
+    this.$el.attr('id', 'pub-challenges-view');
+    $('#content').append( this.el );
     })
   }
 });

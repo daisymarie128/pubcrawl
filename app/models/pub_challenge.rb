@@ -7,12 +7,14 @@
 #  image       :string(255)
 #  description :string(255)
 #  badge       :string(255)
+#  point_value :string(255)
 #  pub_id      :integer
 #  created_at  :datetime
 #  updated_at  :datetime
 #
 
 class PubChallenge < ActiveRecord::Base
-  mount_uploader :image, ImageUploader
+  # mount_uploader :image, ImageUploader
   belongs_to :pub
+  has_many :tasks
 end

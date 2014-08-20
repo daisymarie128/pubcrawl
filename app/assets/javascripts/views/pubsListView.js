@@ -15,6 +15,7 @@ app.PubsListView = Backbone.View.extend({
   },
 
   render: function () {
+    console.log('nothing ever works')
     var pubsListView = Handlebars.compile(app.templates.pubsListView);
     this.$el.html( pubsListView({pubs: app.pubs.toJSON()}) );
     this.$el.attr('id', 'pubs-list-view');

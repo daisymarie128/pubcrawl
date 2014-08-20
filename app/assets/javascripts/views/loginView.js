@@ -44,6 +44,11 @@ app.LoginView = Backbone.View.extend({
         alert('Invalid login');
         return;
       }
+      var loggedInBar = Handlebars.compile(app.templates.loggedInBar);
+      $('#user-bar').html( loggedInBar );
+
+      var pubNavBar = Handlebars.compile(app.templates.pubNavBar);
+      $('#site-navigation-bar').html( pubNavBar() );
       app.router.navigate("users/list", true);
       console.log('working?')
     })

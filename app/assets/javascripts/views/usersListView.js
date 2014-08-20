@@ -15,6 +15,7 @@ app.UsersListView = Backbone.View.extend({
   },
 
   render: function () {
+    console.log('this works right?')
     var usersListView = Handlebars.compile(app.templates.usersListView);
     this.$el.html( usersListView({users: app.users.toJSON()}) );
     this.$el.attr('id', 'users-list-view');

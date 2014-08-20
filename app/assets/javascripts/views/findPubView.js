@@ -1,7 +1,7 @@
 var app = app || {};
 
 app.FindPubView = Backbone.View.extend({
-  el: '#content',
+  tagName: 'div',
 
   events: {
   },
@@ -17,7 +17,8 @@ app.FindPubView = Backbone.View.extend({
     // var findPubView = Handlebars.compile();
     console.log('endering')
     this.$el.html( app.templates.findPubView );
-    // $('#content').html(this.el);
+    this.$el.attr('id', 'find-pub-view');
+    $('#content').html(this.el);
   },
 
   display_map: function (lat, lng, zoom) {

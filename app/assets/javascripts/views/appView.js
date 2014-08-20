@@ -39,10 +39,12 @@ app.AppView = Backbone.View.extend({
         _method: "delete"
       }
     }).done(function(){
+      console.log('logging out and changing nav')
+      var loginBar = Handlebars.compile(app.templates.loginBar);
+      $('#user-bar').append( loginBar );
       app.router.navigate("", true);
-      // this.$el.html( loginBar );
-      // this.$el.attr('id', 'loginBar');
-      // $('#login-functions').html(this.el);
+      console.log('this should not happen')
+
 
     })
   }

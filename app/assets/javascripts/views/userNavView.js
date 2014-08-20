@@ -8,14 +8,15 @@ app.UserNavView = Backbone.View.extend({
   },
 
   initialize: function () {
-    if (app.currentView) {
-      app.currentView.remove();
-    }
-    app.currentView = this;
+    // if (app.currentView) {
+    //   app.currentView.remove();
+    // }
+    // app.currentView = this;
   },
 
   render: function () {
     if (app.currentUser){
+      console.log('is this even working?')
       var loggedInBar = Handlebars.compile(app.templates.loggedInBar);
       $('#user-bar').append( loggedInBar );
     }else{

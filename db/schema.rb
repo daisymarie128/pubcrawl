@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140819031305) do
+ActiveRecord::Schema.define(version: 20140820092147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "achievments", force: true do |t|
+    t.integer "user_id"
+    t.integer "pub_challenge_id"
+  end
 
   create_table "followers", force: true do |t|
     t.integer "user_id"
@@ -34,6 +39,7 @@ ActiveRecord::Schema.define(version: 20140819031305) do
     t.string   "image"
     t.string   "description"
     t.string   "badge"
+    t.string   "point_value"
     t.integer  "pub_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -48,6 +54,10 @@ ActiveRecord::Schema.define(version: 20140819031305) do
     t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "tasks", force: true do |t|
+    t.string "task"
   end
 
   create_table "users", force: true do |t|
