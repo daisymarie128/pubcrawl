@@ -1,0 +1,36 @@
+/*//////////////////////////////user nav/////////*/
+
+#site-navigation-bar{
+  padding-top: 2em;
+  width: 100%;
+  font-family: Avenir Next;
+  text-transform: uppercase;
+}
+
+#site-navigation-bar ul{
+  width: 100%;
+  height: inherit;
+  padding: 0;
+  list-style: none;
+}
+
+#site-navigation-bar li{
+  display: inline;
+  padding: 0.5em;
+  list-style: none;
+  background-color: #000;
+  color: #FFF;
+}
+
+#site-navigation-bar li:hover{
+  background-color: #FFF;
+  color: #000;
+}
+
+#site-navigation-bar a{
+  color: #000;
+}
+
+#site-navigation-bar a:hover{
+  color: #FFF;
+}
