@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 
   #create new user: sign up code
   def create
-    binding.pry
+    # binding.pry
     @user = User.new user_params
     @user.password = params[:password]
     @user.password_confirmation = params[:password_confirmation]
