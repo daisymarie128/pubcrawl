@@ -245,6 +245,13 @@
         <li>{{image}}</li>
         <li>{{description}}</li>
         <li>{{badge}}</li>
+        <li>Tasks
+          <ol>
+            {{#each this.tasks}}
+              <li>{{this}}</li>
+            {{/each}}
+          </ol>
+        </li>
       {{/each}}
     </ul>
 </script>

@@ -4,7 +4,7 @@ class PubsController < ApplicationController
     @pub = Pub.new
   end
 
-  #create new user: sign up code
+  #create new pub: form relateds
   def create
     # binding.pry
     @pub = Pub.new pub_params
@@ -21,13 +21,13 @@ class PubsController < ApplicationController
     render :json => @pub
   end
 
-  #show individual users while signed in as current user
+  #show single pub while signed in as current user
   def show
     @pub = Pub.where(:username => params[:id]).first
   end
 
 
-  #current users page.
+  # all pub page.
   def index
     @pubs = Pub.all
     respond_to do |format|
@@ -36,9 +36,6 @@ class PubsController < ApplicationController
     end
   end
 
-  #il get this to work later...
-  def destroy
-  end
 
   private
   def pub_params

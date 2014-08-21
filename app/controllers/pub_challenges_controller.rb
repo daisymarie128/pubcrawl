@@ -5,7 +5,8 @@ class PubChallengesController < ApplicationController
     render :json => @pub_challenge
   end
 
-  #create new user: sign up code
+  #create new pub challenge: form related
+  # then render that to json data
   def create
     @pub_challenge = PubChallenge.new pub_challenge_params
     @pub_challenge.pub_id = @current_user.id
@@ -22,25 +23,21 @@ class PubChallengesController < ApplicationController
     render :json => @pub_challenge
   end
 
-  #show individual users while signed in as current user
+  #show individual pub challenges
   def show
     # @pub_challenge = PubChallenge.where(:name => params[:id]).first
     @pub_challenge = PubChallenge.find params[:id]
   end
 
 
-  #current users page.
+  #current pub challenge page.
   def index
     @pub_challenges = PubChallenge.all
     # @pub_challenges = @current_pub.pub_challenges
     respond_to do |format|
       format.html {}
-      format.json { render :json => @pub_challenges }
+      format.json { render :json => @pub_challenges, :include => :tasks }
     end
-  end
-
-  #il get this to work later...
-  def destroy
   end
 
   private
