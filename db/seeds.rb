@@ -9,7 +9,9 @@ p1 = Pub.create(:name => 'pubname', :address => 'adress', :description => 'descr
 c1 = PubChallenge.create(:name => 'challeneg name', :image => 'image', :description => 'description', :badge => 'badge', :point_value => "20")
 
 t1 = Task.create(:task => 'task name')
+t2 = Task.create(:task => 'task two')
 
 p1.pub_challenges << c1
 
 c1.tasks << t1
+c1.tasks << t2
