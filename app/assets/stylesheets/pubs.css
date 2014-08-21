@@ -1,3 +1,7 @@
+.pub{
+  margin-top: 3em;
+}
+
 .pubs-list-view{
   width: 100%;
   font-size: 1em;
@@ -15,21 +19,41 @@
   font-weight: bold;
 }
 
-.challenge-image{
-  width: 40%;
-  position: absolute;
+.pub-image{
+  display: inline;
 }
 
 .pub-address{
   position: relative;
-  width: 30%;
-  padding-left: 20%;
-  font-size: 1em;
+  width: 40%;
+  font-size: 1.5em;
 }
 
 .pub-description{
   position: relative;
   width: 30%;
-  padding-left: 20%;
   font-size: 1em;
+}
+
+.view-button li{
+  padding: 0.5em;
+  list-style: none;
+  background-color: #000;
+  color: #FFF;
+  margin-top: 1.4em;
+  width: 8%;
+}
+
+.view-button li:hover{
+  background-color: #E8C53A;
+  color: #000;
+}
+
+.view-button a{
+  text-decoration: none;
+  color: #000;
+}
+
+.view-button a:hover{
+  color: #FFF;
 }
