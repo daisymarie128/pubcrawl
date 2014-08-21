@@ -15,11 +15,11 @@ app.currentUserView = Backbone.View.extend({
   },
 
   render: function () {
-    console.log('this works right?')
+    console.log('current users view')
     var currentUserView = Handlebars.compile(app.templates.currentUserView);
-    this.$el.html( usersListView({users: app.users.toJSON()}) );
+    this.$el.html( currentUserView({users: app.users.toJSON()}) );
 
-    this.$el.attr('id', 'users-list-view');
+    this.$el.attr('id', 'current-user-view');
     $('#content').append( this.el );
   }
 });
