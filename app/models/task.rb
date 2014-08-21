@@ -2,8 +2,9 @@
 #
 # Table name: tasks
 #
-#  id   :integer          not null, primary key
-#  task :string(255)
+#  id               :integer          not null, primary key
+#  task             :string(255)
+#  pub_challenge_id :integer
 #
 
 class Task < ActiveRecord::Base

@@ -6,11 +6,11 @@ class TasksController < ApplicationController
   end
 
   def new
-    @task = task.new
+    @task = Task.new
   end
 
   def create
-    @task = task.new task_params
+    @task = Task.new task_params
     @task.user_id = @current_user.id
     @task.save
   end

@@ -57,7 +57,8 @@ ActiveRecord::Schema.define(version: 20140820092147) do
   end
 
   create_table "tasks", force: true do |t|
-    t.string "task"
+    t.string  "task"
+    t.integer "pub_challenge_id"
   end
 
   create_table "users", force: true do |t|
