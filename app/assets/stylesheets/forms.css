@@ -108,3 +108,32 @@ button{
 .avatar:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }
+
+
+.image::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.image::before {
+  content: 'UPLOAD YOUR IMAGE';
+  width: 100%;
+  color: #FFF;
+  display: inline-block;
+  background-color: #E8C53A;
+  /*border: 1px solid #999;*/
+/*  border-radius: 3px;*/
+  padding: 1em 5em;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+/*  text-shadow: 1px 1px #fff;*/
+  font-weight: bold;
+  font-size: 1em;
+}
+.image:hover::before {
+  border-color: black;
+}
+.image:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+

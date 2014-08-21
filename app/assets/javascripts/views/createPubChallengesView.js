@@ -26,15 +26,37 @@ app.PubChallengesCreateView = Backbone.View.extend({
     // stops the form from submitting params with the button.
     event.preventDefault();
     // saves to the rails database
-    var newPubChallenge = new app.PubChallenge({
-      name: $('#name').val(),
-      image: $('#image').val(),
-      description: $('#description').val(),
-      badge: $('#badge').val(),
-      pointValue: $('#point-value').val(),
-      tasks: JSON.stringify($('.taskname').map(function () { return $(this).val(); }).get())
-    });
-    newPubChallenge.save();
+    //have to do it this way for carrier wave
+    var formData = new FormData();
+      formData.append('pub[name]', $('#name').val());
+      formData.append('pub[image]', $('#image')[0].files[0]);
+      formData.append('pub[description]', $('#description').val());
+      formData.append('pub[badge]', $('#badge')[0].files[0]);
+      formData.append('pub[point-value]', $('#point-value').val());
+      // formData.append('pub[is_pub]', true);
+        console.log('were here!')
+        console.log($('#password').val(), $('#confirm_password').val())
+      $.ajax({
+        url: '/pub_challenges',
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        type: 'POST'
+      }).done( function (){
+      }).fail( function (){
+        console.log('failed')
+      });
+
+    // var newPubChallenge = new app.PubChallenge({
+    //   name: $('#name').val(),
+    //   image: $('#image').val(),
+    //   description: $('#description').val(),
+    //   badge: $('#badge').val(),
+    //   pointValue: $('#point-value').val(),
+    //   tasks: JSON.stringify($('.taskname').map(function () { return $(this).val(); }).get())
+    // });
+    // newPubChallenge.save();
     // Send view to a users list
     app.router.navigate("pub_challenges/list", true);
   },
