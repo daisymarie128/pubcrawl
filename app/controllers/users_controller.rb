@@ -78,7 +78,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.permit(:first_name, :last_name, :username, :email , :avatar , :location , :score , :password, :password_confirmation)
+    params.permit(:first_name, :last_name, :username, :email , :avatar, :image_cache , :location , :score , :password, :password_confirmation)
   end
 
   #chech if the user is logged in. show only their stuff

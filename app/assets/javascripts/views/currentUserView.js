@@ -1,6 +1,6 @@
 var app = app || {};
 
-app.UsersListView = Backbone.View.extend({
+app.currentUserView = Backbone.View.extend({
   tagName: 'div',
 
   events: {
@@ -16,7 +16,7 @@ app.UsersListView = Backbone.View.extend({
 
   render: function () {
     console.log('this works right?')
-    var usersListView = Handlebars.compile(app.templates.usersListView);
+    var currentUserView = Handlebars.compile(app.templates.currentUserView);
     this.$el.html( usersListView({users: app.users.toJSON()}) );
 
     this.$el.attr('id', 'users-list-view');

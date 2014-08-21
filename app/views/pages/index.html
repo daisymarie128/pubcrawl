@@ -63,7 +63,8 @@
     <input type='email' id='email'>
     <br>
     <label for='avatar'>Avatar: </label><br>
-    <input type='text' id='avatar'>
+    <input type='file' id='avatar'>
+    <input type='hidden' id='image_cache'>
     <br>
     <label for='location'>Location: </label><br>
     <input type='text' id='location'>
@@ -84,13 +85,16 @@
   <h2>List of Users</h2>
     <ul>
       {{#each users}}
-        <li>{{first_name}}</li>
-        <li>{{last_name}}</li>
-        <li>{{username}}</li>
-        <li>{{email}}</li>
-        <li>{{avatar}}</li>
-        <li>{{location}}</li>
-        <li>{{score}}</li>
+      <div class="user">
+        <li class="user-username">{{username}}</li>
+        <li class="user-avatar">{{avatar}}</li>
+        <li class="user-first-name">{{first_name}}</li>
+        <li class="user-last-name">{{last_name}}</li>
+
+
+        <li class="user-location">{{location}}</li>
+        <li class="user-score">{{score}}</li>
+        </div><!--///////// close user /////// -->
       {{/each}}
     </ul>
 </script>
