@@ -7,6 +7,7 @@ class TasksController < ApplicationController
       format.html {}
       # send back the tasks which are associated with the current pub chalenge id
       format.json { render :json => @tasks.where(:pub_challenge_id => :pub_challenge_id) }
+    end
   end
 
   def new
@@ -37,8 +38,8 @@ class TasksController < ApplicationController
   end
 
     private
-    def task_params
-    params.require(:task).permit(:task)
-    end
+      def task_params
+      params.require(:task).permit(:task)
+      end
 
 end

@@ -46,19 +46,19 @@ class SessionController < ApplicationController
 
   private
 
-  #chech if the user is logged in. show only their stuff
-  #loads the smart navs
-  def check_if_logged_in
-    redirect_to(new_user_path) if @current_user.nil?
-  end
+    #chech if the user is logged in. show only their stuff
+    #loads the smart navs
+    def check_if_logged_in
+      redirect_to(new_user_path) if @current_user.nil?
+    end
 
-  def check_if_pub
-    redirect_to(root_path) unless @current_user.is_pub?
-  end
+    def check_if_pub
+      redirect_to(root_path) unless @current_user.is_pub?
+    end
 
-  #loads the smart navs
-  #^^ should this be changed I dont fucking know
-  def check_if_admin
-    redirect_to(root_path) unless @current_user.is_admin?
-  end
+    #loads the smart navs
+    #^^ should this be changed I dont fucking know
+    def check_if_admin
+      redirect_to(root_path) unless @current_user.is_admin?
+    end
 end

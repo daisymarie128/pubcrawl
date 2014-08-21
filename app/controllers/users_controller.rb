@@ -77,19 +77,19 @@ class UsersController < ApplicationController
   end
 
   private
-  def user_params
-    params.permit(:first_name, :last_name, :username, :email , :avatar, :image_cache , :location , :score , :password, :password_confirmation)
-  end
+    def user_params
+      params.permit(:first_name, :last_name, :username, :email , :avatar, :image_cache , :location , :score , :password, :password_confirmation)
+    end
 
-  #chech if the user is logged in. show only their stuff
-  #loads the smart navs
-  def check_if_logged_in
-    redirect_to(new_user_path) if @current_user.nil?
-  end
+    #chech if the user is logged in. show only their stuff
+    #loads the smart navs
+    def check_if_logged_in
+      redirect_to(new_user_path) if @current_user.nil?
+    end
 
-  #loads the smart navs
-  def check_if_admin
-    redirect_to(root_path) unless @current_user.is_admin?
-  end
+    #loads the smart navs
+    def check_if_admin
+      redirect_to(root_path) unless @current_user.is_admin?
+    end
 
 end
