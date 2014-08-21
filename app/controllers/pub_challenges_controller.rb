@@ -1,4 +1,5 @@
 class PubChallengesController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   def new
     @pub_challenge = PubChallenge.new
@@ -11,7 +12,12 @@ class PubChallengesController < ApplicationController
     @pub_challenge = PubChallenge.new pub_challenge_params
     @pub_challenge.pub_id = @current_user.id
     if @pub_challenge.save
-      render :json => @pub_challenge
+      tasks = JSON.parse params[:tasks]
+      tasks.each do |task|
+        @task = Task.create :task => task
+        @pub_challenge.tasks << @task
+      end
+      render :json => @pub_challenge, :include => :tasks
     else
       render :json => {:errors => @pub_challenge.errors}
     end
@@ -42,7 +48,7 @@ class PubChallengesController < ApplicationController
 
   private
   def pub_challenge_params
-    params.permit(:name, :image, :description, :badge, :point_value, :tasks)
+    params.permit(:name, :image, :description, :badge, :point_value)
   end
 
 end

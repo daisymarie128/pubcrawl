@@ -111,7 +111,7 @@
 
 <script type='text/template' id='create-pub-template'>
   <h2>Create Pub</h2>
-  <form id='create-pub-form' action='#'>
+  <form id='create-pub-form' action='#' enctype="multipart/form-data">
 
     <label for='name'>Pub Name: </label><br>
     <input type='text' id='name' autofocus='true'><br>
@@ -132,8 +132,8 @@
     <label for='password'>Password: </label><br>
     <input type='password' id='password'>
     <br>
-    <label for='password_confirmation'>Confirm password: </label><br>
-    <input type='password' id='password_confirmation'>
+    <label for='confirm_password'>Confirm password: </label><br>
+    <input type='password' id='confirm_password'>
     <br>
     <button>Create Pub</button>
   </form>
@@ -221,7 +221,7 @@
     <br>
     <label for='taskname'>Task: </label>
     <br>
-    <input type='text' id='taskname'>
+    <input type='text' class='taskname'>
     <br>
     <button id="create-challenge">Create Pub Challenge</button>
   </form>
@@ -232,7 +232,7 @@
 <script type='text/template' id='new-task-template'>
   <label for='taskname'>Task: </label>
     <br>
-    <input type='text' id='taskname'>
+    <input type='text' class='taskname'>
 </script>
 
 <!--/////////////////////////////////////////////pub challenge list template ////////////-->
@@ -241,17 +241,19 @@
   <h2>List of Pub Challenges</h2>
     <ul>
       {{#each pubChallenges}}
-        <li>{{name}}</li>
-        <li>{{image}}</li>
-        <li>{{description}}</li>
-        <li>{{badge}}</li>
-        <li>Tasks
+      <div class ="challenge-holder">
+        <li class="challenge-name">{{name}}</li>
+        <li class="challenge-image">{{image}}</li>
+        <li class="challenge-description">{{description}}</li>
+        <li class="challenge-badge">{{badge}}</li>
+        <li class="challenge-tasks">CHALLENGE!
           <ol>
             {{#each this.tasks}}
-              <a href="#qrcode"><li>{{this}}</li></a>
+              <a href="#qrcode"><liclass="challenge-task-items">{{this}}</li></a>
             {{/each}}
           </ol>
         </li>
+        </div><!--/////////close challenge holder ///////-->
       {{/each}}
     </ul>
 </script>

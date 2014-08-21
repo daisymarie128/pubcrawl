@@ -32,7 +32,7 @@ app.PubChallengesCreateView = Backbone.View.extend({
       description: $('#description').val(),
       badge: $('#badge').val(),
       pointValue: $('#point-value').val(),
-      taskName: $('#taskname').val()
+      tasks: JSON.stringify($('.taskname').map(function () { return $(this).val(); }).get())
     });
     newPubChallenge.save();
     // Send view to a users list

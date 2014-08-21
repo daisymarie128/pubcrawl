@@ -26,17 +26,35 @@ app.CreatePub = Backbone.View.extend({
     event.preventDefault();
     // saves to the rails database
     // console.log($('#password').val())
-    var newPub = new app.Pub({
-      name: $('#name').val(),
-      address: $('#address').val(),
-      email: $('#email').val(),
-      image: $('#image').val(),
-      description: $('#description').val(),
-      password: $('#password').val(),
-      password_confirmation: $('#confirm_password').val(),
-      is_pub: true
-    });
-    newPub.save();
+    var formData = new FormData();
+    formData.append('pub[image]', $('#image').val());
+      formData.append('pub[name]', $('#name').val());
+      formData.append('pub[address]', $('#address').val());
+      formData.append('pub[email]', $('#email').val());
+      formData.append('pub[image]', $('#image')[0].files[0]);
+      formData.append('pub[description]', $('#description').val());
+      formData.append('pub[password]', $('#password').val());
+      formData.append('pub[password_confirmation]', $('#confirm_password').val());
+      formData.append('pub[is_pub]', true);
+        console.log('were here!')
+        console.log($('#password').val(), $('#confirm_password').val())
+      $.ajax({
+        url: '/pubs',
+        data: formData,
+        cache: false,
+        contentType: false,
+        processData: false,
+        type: 'POST'
+      }).done( function (){
+        console.log('did this hsit work')
+      }).fail( function (){
+        console.log('i assumed this would fail')
+      });
+
+
+
+
+    // newPub.save();
     // adds to the backbone memory (browser)
     // app.users.add(newUser);
     // Send view to a users list

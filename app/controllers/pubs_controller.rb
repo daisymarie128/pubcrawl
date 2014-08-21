@@ -8,6 +8,7 @@ class PubsController < ApplicationController
   def create
     # binding.pry
     @pub = Pub.new pub_params
+    # binding.pry
     if @pub.save
       render :json => @pub
     else
@@ -39,7 +40,7 @@ class PubsController < ApplicationController
 
   private
   def pub_params
-    params.permit(:name, :email, :password, :address, :image, :image_cache, :description)
+    params.require(:pub).permit(:name, :email, :password, :password_confirmation, :address, :image, :image_cache, :description, :is_pub)
   end
 
 end
