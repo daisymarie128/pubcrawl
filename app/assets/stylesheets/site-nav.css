@@ -1,10 +1,12 @@
 /*//////////////////////////////user nav/////////*/
 
 #site-navigation-bar{
+  margin-top: 1em;
   padding-top: 0.2em;
   width: 100%;
   font-family: Avenir Next;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
 #site-navigation-bar ul{
@@ -24,11 +26,12 @@
 }
 
 #site-navigation-bar li:hover{
-  background-color: #FFF;
+  background-color: #E8C53A;
   color: #000;
 }
 
 #site-navigation-bar a{
+  text-decoration: none;
   color: #000;
 }
 

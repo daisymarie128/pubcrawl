@@ -24,7 +24,7 @@ h2{
 
 header{
   width: 100%;
-  background-color: #E8C53A;
+/*  background-color: #E8C53A;*/
   height: inherit;
 }
 
@@ -37,37 +37,39 @@ header{
   background-color: #FFF;
 }
 
-#login-options {
+#login-functions {
   /*position: absolute;*/
   right: 0;
-  padding: 1em;
+  padding: 2em;
+  background-color: #E8C53A;
   font-family: Avenir Next;
   font-size: 0.7em;
   text-transform: uppercase;
+  font-weight: bold;
 }
 
-#login-options ul{
+#login-functions ul{
   width: 100%;
   height: inherit;
   padding: 0;
   list-style: none;
 }
 
-#login-options li{
+#login-functions li{
   padding: 1em;
   list-style: none;
   display: inline;
   background-color: #000;
 }
-#login-options li:hover{
+#login-functions li:hover{
   padding: 1em;
   background-color: #FFF;
 }
-#login-options a{
+#login-functions a{
   color: #FFF;
   text-decoration: none;
 }
-#login-options a:hover{
+#login-functions a:hover{
   color: #000;
   text-decoration: none;
 }
