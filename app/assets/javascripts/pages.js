@@ -13,6 +13,7 @@ $(document).ready(function () {
     createPubChallengeView: $('#pub-challenge-template').html(),
     addTask: $('#new-task-template').html(),
     pubChallengesListView: $('#pub-challenge-list-template').html(),
+    usersAchievementsView: $('#user-achievements-list-template').html(),
     findPubView: $('#find-pub-template').html()
   }
 
