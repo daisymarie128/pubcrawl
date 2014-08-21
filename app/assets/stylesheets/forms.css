@@ -22,14 +22,29 @@ input[type=text], input[type=email], input[type=url],input[type=password], texta
     outline: none;
     padding: 3px 0px 3px 3px;
     margin: 5px 1px 3px 0px;
-    border: 1px solid #ffcb39;
+    border: 1px solid #E8C53A;
     font-size: 3em;
     width: 40%;
     margin-left: 30%;
     margin-right: 30%;
 }
+
+input[type=file]{
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  /*background-color: black;*/
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
 input[name=commit]{
-    background-color: #F2CF66;
+    background-color: #E8C53A;
     border: 0;
     border-bottom: 5px solid #000;
     border-right: 5px solid #000;
@@ -48,11 +63,11 @@ input[name=commit]{
 }
 
 button{
-    background-color: #F2CF66;
+  background-color: #E8C53A;
   border: 0;
-  border-bottom: 5px solid #000;
-  border-right: 5px solid #000;
-  text-shadow: 0px -2px #D1B358;
+/*  border-bottom: 5px solid #000;
+  border-right: 5px solid #000;*/
+/*  text-shadow: 0px -2px #D1B358;*/
   position: relative;
   padding: 10px 40px;
   font-size: 2em;
@@ -64,5 +79,32 @@ button{
   text-transform: uppercase;
   border-radius: 0;
   -webkit-appearance:none;
-  margin-left: 40%;
+  margin-left: 43%;
+}
+
+.avatar::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.avatar::before {
+  content: 'UPLOAD YOUR IMAGE';
+  width: 100%;
+  color: #FFF;
+  display: inline-block;
+  background-color: #E8C53A;
+  /*border: 1px solid #999;*/
+/*  border-radius: 3px;*/
+  padding: 1em 5em;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+/*  text-shadow: 1px 1px #fff;*/
+  font-weight: bold;
+  font-size: 1em;
+}
+.avatar:hover::before {
+  border-color: black;
+}
+.avatar:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
 }

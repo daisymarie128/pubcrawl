@@ -26,7 +26,7 @@ app.Router = Backbone.Router.extend({
       app.currentView.remove();
     }
     var appView = new app.AppView()
-    appView.render();
+    indexView.render();
   },
 
   createUser: function () {

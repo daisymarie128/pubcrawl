@@ -4,7 +4,7 @@ app.UserNavView = Backbone.View.extend({
   el: '#user-bar',
 
   events: {
-    'click button': '#logout'
+    'click #logout': 'logout'
   },
 
   initialize: function () {

@@ -40,7 +40,7 @@ class PubsController < ApplicationController
 
   private
   def pub_params
-    params.require(:pub).permit(:name, :email, :password, :password_confirmation, :address, :image, :image_cache, :description, :is_pub)
+    params.require(:pub).permit(:name, :email, :password, :password_confirmation, :address, :image, :image_cache, :description)
   end
 
 end

@@ -35,7 +35,7 @@ app.CreatePub = Backbone.View.extend({
       formData.append('pub[description]', $('#description').val());
       formData.append('pub[password]', $('#password').val());
       formData.append('pub[password_confirmation]', $('#confirm_password').val());
-      formData.append('pub[is_pub]', true);
+      // formData.append('pub[is_pub]', true);
         console.log('were here!')
         console.log($('#password').val(), $('#confirm_password').val())
       $.ajax({
