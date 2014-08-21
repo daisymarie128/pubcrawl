@@ -2,7 +2,10 @@ class TasksController < ApplicationController
 
 
   def index
-    @tasks = @pub_challenge.tasks
+    @task = Task.all
+    respond_to do |format|
+      format.html {}
+      format.json { render :json => @tasks.where(:pub_challenge_id => :pub_challenge_id) }
   end
 
   def new
