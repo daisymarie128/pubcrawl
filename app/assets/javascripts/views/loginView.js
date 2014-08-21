@@ -50,8 +50,8 @@ app.LoginView = Backbone.View.extend({
         alert('Invalid login');
         return;
       }
-      // var loggedInBar = Handlebars.compile(app.templates.loggedInBar);
-      // $('#login-functions').html( loggedInBar );
+      var loggedInBar = Handlebars.compile(app.templates.loggedInBar);
+      $('#login-functions').html( loggedInBar );
 
       // var pubNavBar = Handlebars.compile(app.templates.pubNavBar);
       // $('#site-navigation-bar').html( pubNavBar() );
