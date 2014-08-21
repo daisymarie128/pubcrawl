@@ -32,4 +32,9 @@ $(document).ready(function () {
     app.router = new app.Router();
     Backbone.history.start();
   });
+
+  //Redirects to homepage when click on title.
+  $('.title span').click(function(){
+    window.location.replace("#");
+  });
 });
