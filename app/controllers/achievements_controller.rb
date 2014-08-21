@@ -38,6 +38,7 @@ class AchievementsController < ApplicationController
   private
     def achievement_params
     params.require(:achievement).permit(:pub_challenges)
+   end
   end
 
 end
