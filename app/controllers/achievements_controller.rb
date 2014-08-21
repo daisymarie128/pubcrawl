@@ -15,17 +15,6 @@ class AchievementsController < ApplicationController
     @achievement.save
   end
 
-  def welcome
-  end
-
-  def like
-    # raise params.inspect
-    @achievement = Achievement.find params[:id]
-    @achievement.likes.new
-    @achievement.save
-  end
-
-
   def show
     @achievement = Achievement.find params[:id]
 
