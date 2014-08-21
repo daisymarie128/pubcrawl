@@ -30,9 +30,9 @@ header{
 
 .title{
   width: 100%;
-  /*position: absolute;*/
-  margin-left: 35%;
-  left: 0;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
   font-size: 4em;
   font-family: Langdon;
   background-color: #FFF;
@@ -75,11 +75,10 @@ header{
   text-decoration: none;
 }
 
-
 #content{
   font-family: Avenir Next;
   font-size: 0.7em;
-  padding-top: 5%;
+  padding-top: 2%;
 }
 
 #map_canvas {
