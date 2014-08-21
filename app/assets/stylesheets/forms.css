@@ -1,16 +1,21 @@
 #login h3{
-  margin: auto;
-  margin-left: 41%;
+  /*margin: auto;*/
+  /*margin-left: 41%;*/
   font-size: 4em;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
 }
 
-label{
+#login label, #create-user-form label, #create-pub-form label{
     font-size: 3em;
     text-transform: uppercase;
-    width: 40%;
-    margin-left: 40%;
-    margin-right: 30%;
+    /*width: auto;*/
+    display: block;
+    /*margin-left: 40%;*/
+    /*margin-right: 30%;*/
     font-weight: bold;
+    text-align: center;
 }
 
 
@@ -21,12 +26,15 @@ input[type=text], input[type=email], input[type=url],input[type=password], texta
     -o-transition: all 0.30s ease-in-out;
     outline: none;
     padding: 3px 0px 3px 3px;
-    margin: 5px 1px 3px 0px;
+    /*margin: 5px 1px 3px 0px;*/
     border: 1px solid #E8C53A;
     font-size: 3em;
-    width: 40%;
-    margin-left: 30%;
-    margin-right: 30%;
+    width: auto;
+/*    margin-left: 30%;
+    margin-right: 30%;*/
+    display: block;
+    margin: 10px auto;
+    text-align: center;
 }
 
 input[type=file]{
@@ -79,13 +87,21 @@ button{
   text-transform: uppercase;
   border-radius: 0;
   -webkit-appearance:none;
-  margin-left: 43%;
+  width: auto;
+  text-align: center;
+  display: block;
+  margin: 10px auto;
+}
+input.avatar, input#image{
+  width: 37%;
+  display: block;
+  margin: 0 auto;
 }
 
 .avatar::-webkit-file-upload-button {
   visibility: hidden;
 }
-.avatar::before {
+.avatar::before, #image::before {
   content: 'UPLOAD YOUR IMAGE';
   width: 100%;
   color: #FFF;
@@ -93,7 +109,8 @@ button{
   background-color: #E8C53A;
   /*border: 1px solid #999;*/
 /*  border-radius: 3px;*/
-  padding: 1em 5em;
+  padding: 1em 0;
+  text-align: center;
   outline: none;
   white-space: nowrap;
   -webkit-user-select: none;
