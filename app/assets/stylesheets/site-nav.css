@@ -17,7 +17,7 @@
   padding: 0;
   list-style: none;
   display: block;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 #site-navigation-bar li{
@@ -41,7 +41,7 @@
 #site-navigation-bar a:hover{
   color: #FFF;
 }
- 
+
 div#does-this-work{
   display: block;
   margin: 0 auto;
@@ -52,11 +52,11 @@ div#does-this-work{
 div#does-this-work ul{
   display: block;
   margin: 0 auto;
-  width: auto;  
+  width: auto;
 }
 
 div#does-this-work ul a{
   display: inline-block;
-  margin: 0 0.8vw;
+  /*margin: 0 0.8vw;*/
   width: auto;
 }
