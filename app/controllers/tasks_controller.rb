@@ -2,7 +2,7 @@ class TasksController < ApplicationController
 
 
   def index
-    @tasks = @current_user.tasks
+    @tasks = @pub_challenge.tasks
   end
 
   def new
@@ -11,7 +11,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new task_params
-    @task.user_id = @current_user.id
+    @task.pub_challenge_id = @pub_challenge.id
     @task.save
   end
 

@@ -45,7 +45,7 @@ class PubChallengesController < ApplicationController
 
   private
   def pub_challenge_params
-    params.permit(:name, :image, :description, :badge, :point_value)
+    params.permit(:name, :image, :description, :badge, :point_value, :tasks)
   end
 
 end

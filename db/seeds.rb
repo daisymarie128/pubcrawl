@@ -12,5 +12,4 @@ t1 = Task.create(:task => 'task name')
 
 p1.pub_challenges << c1
 
-# c1.tasks << t1
-
+c1.tasks << t1
