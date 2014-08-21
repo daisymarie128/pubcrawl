@@ -18,7 +18,7 @@ class AchievementsController < ApplicationController
     @achievement.user = @current_user.id
     @achievement.pub_challenge = params[:id]
     if @achievement.save
-      render :json => @achievement { status: 'ok'}
+      render :json => @achievement #{ status: 'ok'}
     else
       render :json => {:errors => @achievement.errors}
     end
