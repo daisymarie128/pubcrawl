@@ -35,11 +35,17 @@ app.LoginView = Backbone.View.extend({
     }).done(function(response){
       console.log('login got', response);
       if (response.type == 'pub') {
+        console.log('this might be working')
         app.currentUser = response.user;
         app.currentUser.type = 'pub'
+        var pubNavBar = Handlebars.compile(app.templates.pubNavBar);
+        $('#site-navigation-bar').html( pubNavBar() );
       } else if (response.type == 'user') {
+        console.log('why is this working')
         app.currentUser = response.user;
         app.currentUser.type = 'user'
+        var userNavBar = Handlebars.compile(app.templates.userNavBar);
+      $('#site-navigation-bar').html( userNavBar() );
       } else {
         alert('Invalid login');
         return;
@@ -47,10 +53,10 @@ app.LoginView = Backbone.View.extend({
       var loggedInBar = Handlebars.compile(app.templates.loggedInBar);
       $('#user-bar').html( loggedInBar );
 
-      var pubNavBar = Handlebars.compile(app.templates.pubNavBar);
-      $('#site-navigation-bar').html( pubNavBar() );
+      // var pubNavBar = Handlebars.compile(app.templates.pubNavBar);
+      // $('#site-navigation-bar').html( pubNavBar() );
       app.router.navigate("users/list", true);
-      console.log('working?')
+    //   console.log('working?')
     })
     // if (sign in is right){
     //   app.router.navigate("users/list", true);
