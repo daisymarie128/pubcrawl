@@ -147,7 +147,7 @@
       {{#each pubs}}
         <div class="pub-name"><li>{{name}}</li></div>
         <div class="pub-address"><li>{{address}}</li></div>
-        <div class="pub-image"><li><img src="{{image}}"></li></div>
+        <div class="pub-image"><li><img src="{{image.thumb.url}}"></li></div>
         <div class="pub-description"><li>{{description}}</li></div>
       {{/each}}
     </ul>
@@ -248,7 +248,7 @@
         <li>Tasks
           <ol>
             {{#each this.tasks}}
-              <li>{{this}}</li>
+              <a href="#qrcode"><li>{{this}}</li></a>
             {{/each}}
           </ol>
         </li>

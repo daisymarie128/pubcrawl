@@ -35,9 +35,9 @@ class AchievementsController < ApplicationController
     @achievement.destroy
   end
 
-    private
+  private
     def achievement_params
     params.require(:achievement).permit(:pub_challenges)
-    end
+  end
 
 end
