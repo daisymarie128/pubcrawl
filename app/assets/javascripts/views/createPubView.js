@@ -31,7 +31,7 @@ app.CreatePub = Backbone.View.extend({
       formData.append('pub[name]', $('#name').val());
       formData.append('pub[address]', $('#address').val());
       formData.append('pub[email]', $('#email').val());
-      formData.append('pub[image]', $('#image')[0].files[0]);
+      formData.append('pub[image]', $('.image')[0].files[0]);
       formData.append('pub[description]', $('#description').val());
       formData.append('pub[password]', $('#password').val());
       formData.append('pub[password_confirmation]', $('#confirm_password').val());
