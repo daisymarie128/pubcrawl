@@ -47,6 +47,7 @@ app.PubChallengesCreateView = Backbone.View.extend({
     //   }).fail( function (){
     //     console.log('failed')
     //   });
+//////ytes
 
     var newPubChallenge = new app.PubChallenge({
       name: $('#name').val(),
