@@ -22,6 +22,7 @@ app.PubChallengesCreateView = Backbone.View.extend({
     $('#content').html(this.el);
   },
 
+  //re fix this with form data. add the image cache to the model aswell
   createPubChallenge: function () {
     // stops the form from submitting params with the button.
     event.preventDefault();
