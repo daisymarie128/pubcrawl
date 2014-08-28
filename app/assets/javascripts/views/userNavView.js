@@ -36,7 +36,7 @@ app.UserNavView = Backbone.View.extend({
     if (app.currentUser){
       console.log('uservanview')
       var loggedInBar = Handlebars.compile(app.templates.loggedInBar);
-      $('#login-functions').html( loggedInBar );
+      $('#login-functions').html( loggedInBar( app.currentUser ) );
     }else{
       var loginBar = Handlebars.compile(app.templates.loginBar);
       $('#login-functions').html( loginBar );
