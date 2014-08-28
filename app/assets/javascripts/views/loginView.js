@@ -31,29 +31,32 @@ app.LoginView = Backbone.View.extend({
       data: {
         username: $('#username').val(),
         password: $('#password').val()
-      }
-    }).done(function(response){
-      console.log('login got', response);
-      if (response.type == 'pub') {
-        console.log('this is a pub')
-        app.currentUser = response.user;
-        app.currentUser.type = 'pub'
-        var pubNavBar = Handlebars.compile(app.templates.pubNavBar);
-        $('#site-navigation-bar').html( pubNavBar() );
-      } else if (response.type == 'user') {
-        console.log('this is a user')
-        app.currentUser = response.user;
-        app.currentUser.type = 'user'
-        var userNavBar = Handlebars.compile(app.templates.userNavBar);
-        $('#site-navigation-bar').html( userNavBar() );
-      } else {
-        alert('Invalid login');
-        return;
+      },
+      success: function(response) {
+        console.log('login got', response);
+        if (response.type == 'pub') {
+          console.log('this is a pub')
+          app.currentUser = response.user;
+          app.currentUser.type = 'pub'
+          var pubNavBar = Handlebars.compile(app.templates.pubNavBar);
+          $('#site-navigation-bar').html( pubNavBar() );
+        } else if (response.type == 'user') {
+          console.log('this is a user')
+          app.currentUser = response.user;
+          app.currentUser.type = 'user'
+          var userNavBar = Handlebars.compile(app.templates.userNavBar);
+          $('#site-navigation-bar').html( userNavBar() );
+        } else {
+          alert('Invalid login');
+          return;
+        }
+
+        // var pubNavBar = Handlebars.compile(app.templates.pubNavBar);
+        // $('#site-navigation-bar').html( pubNavBar() );
+        app.router.navigate("users/list", true);
       }
 
-      // var pubNavBar = Handlebars.compile(app.templates.pubNavBar);
-      // $('#site-navigation-bar').html( pubNavBar() );
-      app.router.navigate("users/list", true);
+    }).done(function(response){
     //   console.log('working?')
     })
     // if (sign in is right){
