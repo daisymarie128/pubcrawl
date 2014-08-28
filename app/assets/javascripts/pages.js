@@ -34,7 +34,7 @@ $(document).ready(function () {
       type: 'get',
       dataType: 'json',
       success: function(response){
-        if (typeof response == 'object'){
+        if (response.id){
           app.currentUser = response
           var loggedInBar = Handlebars.compile(app.templates.loggedInBar);
           loggedInBar(app.currentUser)

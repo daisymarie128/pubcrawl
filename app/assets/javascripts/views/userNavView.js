@@ -24,15 +24,12 @@ app.UserNavView = Backbone.View.extend({
       data: {
         _method: "delete"
       }
-    }).done(function(){
-      console.log('logging out and changing nav')
-      var loginBar = Handlebars.compile(app.templates.loginBar);
-      app.currentUser = null
-      $('#login-functions').html( loginBar );
-      app.router.navigate("", true);
-    }).fail(function() {
-      console.log('logout failed');
-    })
+    });
+
+    var loginBar = Handlebars.compile(app.templates.loginBar);
+    app.currentUser = null
+    $('#login-functions').html( loginBar );
+    app.router.navigate("", true);
   },
 
   render: function () {
