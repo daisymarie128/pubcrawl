@@ -31,8 +31,8 @@ class SessionController < ApplicationController
       user = nil
       type = :invalid
     end
-    # binding.pry
     @current_user = (user || pub)
+    # binding.pry
     render :json => {
       :user => result,
       :type => type
@@ -42,6 +42,7 @@ class SessionController < ApplicationController
 
   def destroy
     session[:user_id] = nil
+    render :text => 'log out'
   end
 
   private

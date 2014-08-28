@@ -17,6 +17,7 @@ $(document).ready(function () {
     findPubView: $('#find-pub-template').html()
   }
 
+
   app.users = new app.Users();
   var userRequest = app.users.fetch();
 
@@ -29,8 +30,22 @@ $(document).ready(function () {
 
 
   $.when(userRequest, challengeRequest, pubRequest).done(function () {
-    app.router = new app.Router();
-    Backbone.history.start();
+    $.ajax('/current_user', {
+      type: 'get',
+      dataType: 'json',
+      success: function(response){
+        if (typeof response == 'object'){
+          app.currentUser = response
+          var loggedInBar = Handlebars.compile(app.templates.loggedInBar);
+          loggedInBar(app.currentUser)
+          console.log(app.currentUser)
+          $('#login-functions').html( loggedInBar );
+        }
+        console.log(app.currentUser)
+        app.router = new app.Router();
+        Backbone.history.start();
+      }
+      });
   });
 
   //Redirects to homepage when click on title.

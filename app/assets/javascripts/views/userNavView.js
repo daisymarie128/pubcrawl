@@ -1,10 +1,10 @@
 var app = app || {};
 
 app.UserNavView = Backbone.View.extend({
-  el: '#user-bar',
+  el: '#login-functions',
 
   events: {
-    'click #logout': 'logout'
+    'click .logout': 'logout'
   },
 
   initialize: function () {
@@ -15,7 +15,7 @@ app.UserNavView = Backbone.View.extend({
   },
 
   logout: function (event) {
-    console.log('sdfsdf');
+    console.log('logot starting');
     event.preventDefault();
     // i want this shit to just log the fuck out. why you no work!
     $.ajax('/session', {
@@ -27,22 +27,22 @@ app.UserNavView = Backbone.View.extend({
     }).done(function(){
       console.log('logging out and changing nav')
       var loginBar = Handlebars.compile(app.templates.loginBar);
-      $('#user-bar').append( loginBar );
+      app.currentUser = null
+      $('#login-functions').html( loginBar );
       app.router.navigate("", true);
-      console.log('this should not happen')
     }).fail(function() {
-      console.log('you failed');
+      console.log('logout failed');
     })
   },
 
   render: function () {
     if (app.currentUser){
-      console.log('is this even working?')
+      console.log('uservanview')
       var loggedInBar = Handlebars.compile(app.templates.loggedInBar);
-      $('#user-bar').append( loggedInBar );
+      $('#login-functions').html( loggedInBar );
     }else{
       var loginBar = Handlebars.compile(app.templates.loginBar);
-      $('#user-bar').append( loginBar );
+      $('#login-functions').html( loginBar );
     }
 
   }

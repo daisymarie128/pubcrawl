@@ -39,6 +39,7 @@ class UsersController < ApplicationController
 
   #current users page.
   def index
+    # binding.pry
     @users = User.all
     respond_to do |format|
       format.html {}
@@ -74,6 +75,14 @@ class UsersController < ApplicationController
   #display followers where the friend belongs to the user
   def followers
     @followers = Follower.where(:friend_id => @current_user.id)
+  end
+
+  def current_user_check
+    if @current_user
+      render :json => @current_user
+    else
+      render :text => 'this shit be empty'
+    end
   end
 
   private
