@@ -10,10 +10,7 @@ class UsersController < ApplicationController
 
   #create new user: sign up code
   def create
-    # binding.pry
     @user = User.new user_params
-    @user.password = params[:password]
-    @user.password_confirmation = params[:password_confirmation]
     if @user.save
       render :json => @user
     else
@@ -87,7 +84,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.permit(:first_name, :last_name, :username, :email , :avatar, :image_cache , :location , :score , :password, :password_confirmation)
+      params.require(:pub).permit(:first_name, :last_name, :username, :email , :avatar, :image_cache , :location, :score, :password, :password_confirmation)
     end
 
     #chech if the user is logged in. show only their stuff

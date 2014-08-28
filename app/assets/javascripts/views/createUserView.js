@@ -32,13 +32,13 @@ app.UserView = Backbone.View.extend({
       formData.append('pub[first_name]', $('#first_name').val());
       formData.append('pub[last_name]', $('#last_name').val());
       formData.append('pub[username]', $('#username').val());
-      formData.append('pub[avatar]', $('#avatar')[0].files[0]);
+      // formData.append('pub[avatar]', $('#avatar')[0].files[0]);
       formData.append('pub[email]', $('#email').val());
       formData.append('pub[password]', $('#password').val());
-      formData.append('pub[password_confirmation]', $('#confirm_password').val());
+      formData.append('pub[password_confirmation]', $('#password_confirmation').val());
       formData.append('pub[location]', $('#location').val());
         console.log('were here!')
-        console.log($('#password').val(), $('#confirm_password').val())
+        console.log($('#password').val(), $('#password_confirmation').val())
       $.ajax({
         url: '/users',
         data: formData,
