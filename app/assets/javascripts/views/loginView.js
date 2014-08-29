@@ -50,14 +50,13 @@ app.LoginView = Backbone.View.extend({
           alert('Invalid login');
           return;
         }
+        var loggedInBar = Handlebars.compile(app.templates.loggedInBar);
+        $('#login-functions').html( loggedInBar( app.currentUser ) );
 
         // var pubNavBar = Handlebars.compile(app.templates.pubNavBar);
         // $('#site-navigation-bar').html( pubNavBar() );
         app.router.navigate("users/list", true);
       }
-
-    }).done(function(response){
-    //   console.log('working?')
     })
     // if (sign in is right){
     //   app.router.navigate("users/list", true);
