@@ -23,13 +23,14 @@ app.UserNavView = Backbone.View.extend({
       dataType: 'json',
       data: {
         _method: "delete"
+      },
+      complete: function(){
+        var loginBar = Handlebars.compile(app.templates.loginBar);
+        app.currentUser = null
+        $('#login-functions').html( loginBar );
+        app.router.navigate("", true);
       }
     });
-
-    var loginBar = Handlebars.compile(app.templates.loginBar);
-    app.currentUser = null
-    $('#login-functions').html( loginBar );
-    app.router.navigate("", true);
   },
 
   render: function () {
