@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token
   protect_from_forgery with: :exception
   before_action :authenticate_user
+  before_action :cors_set_headers
 
   private
   def authenticate_user
@@ -15,6 +16,13 @@ class ApplicationController < ActionController::Base
     if @current_user.nil?
       session[:user_id] = nil
     end
+  end
+
+  def cors_set_headers
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
+    headers['Access-Control-Request-Method'] = '*'
+    headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
   end
 
 end
