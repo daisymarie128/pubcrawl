@@ -1,5 +1,5 @@
 class SessionController < ApplicationController
-
+  before_action :cors_set_headers
   before_action :check_if_logged_in, :except => [:new, :create, :follow, :unfollow]
   before_action :check_if_admin, :only => [:index]
 
