@@ -2,8 +2,12 @@ class AchievementsController < ApplicationController
 
 
   def index
+    if @current_user.is_a? User
     @achievements = @current_user.achievements
     render :json => @achievements
+    else
+      render :json => {}
+    end
   end
 
   def new

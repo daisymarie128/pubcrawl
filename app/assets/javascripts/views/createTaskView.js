@@ -27,7 +27,7 @@ app.TaskCreateView = Backbone.View.extend({
     });
     newTask.save();
     console.log('task saving')
-    app.tasks.fetch(function(){
+    app.pubChallenges.fetch().done(function(){
       console.log('navigating to challegnges list')
       app.router.navigate("pub_challenges/list", true);
     })

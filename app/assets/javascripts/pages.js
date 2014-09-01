@@ -31,7 +31,7 @@ $(document).ready(function () {
   var taskRequest = app.tasks.fetch();
 
 
-  $.when(userRequest, challengeRequest, pubRequest).done(function () {
+  $.when(userRequest, challengeRequest, pubRequest, taskRequest).done(function () {
     $.ajax('/current_user', {
       type: 'get',
       dataType: 'json',

@@ -11,6 +11,7 @@ app.Router = Backbone.Router.extend({
     'pub_challenges/create': 'createPubChallenges',
     'tasks/create': 'createTask',
     'pub_challenges/list': 'pubChallengesListView',
+    'pub_challenges/:id': 'pubChallengesListSpecific',
     'pubs/find_pub': 'findPubView'
   },
 
@@ -63,6 +64,11 @@ app.Router = Backbone.Router.extend({
   pubChallengesListView: function () {
     var pubChallengesListView = new app.PubChallengesListView();
     pubChallengesListView.render();
+  },
+
+  pubChallengesListSpecific: function () {
+    var pubChallengesListSpecific = new app.PubChallengesListSpecific();
+    pubChallengesListSpecific.render();
   },
 
   login: function () {
