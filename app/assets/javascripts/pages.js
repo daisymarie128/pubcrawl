@@ -28,7 +28,6 @@ $(document).ready(function () {
   var challengeRequest = app.pubChallenges.fetch();
 
 
-
   $.when(userRequest, challengeRequest, pubRequest).done(function () {
     $.ajax('/current_user', {
       type: 'get',
@@ -37,11 +36,9 @@ $(document).ready(function () {
         if (response.id){
           app.currentUser = response
           var loggedInBar = Handlebars.compile(app.templates.loggedInBar);
-          loggedInBar(app.currentUser)
           console.log(app.currentUser)
-          $('#login-functions').html( loggedInBar );
+          $('#login-functions').html( loggedInBar(app.currentUser) );
         }
-        console.log(app.currentUser)
         app.router = new app.Router();
         Backbone.history.start();
       }
