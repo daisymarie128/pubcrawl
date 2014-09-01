@@ -18,4 +18,6 @@ class Pub < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   has_many :pub_challenges
   validates :username, :email, :uniqueness => true, :presence => true
+  # validates :username, :length => { in: 3..20 }
+  # validates :password, :length => { in: 6..20 }
 end
