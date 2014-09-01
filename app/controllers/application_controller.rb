@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+<<<<<<< HEAD
   after_action :cors_set_headers
+=======
+  before_action :cors_preflight_check
+  before_action :cors_set_headers
+>>>>>>> da7a52e91bcd1d325793e283bd9dbb6ee2dec982
   skip_before_action :verify_authenticity_token
   protect_from_forgery with: :null_session
   before_action :authenticate_user
