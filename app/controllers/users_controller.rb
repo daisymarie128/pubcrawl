@@ -37,7 +37,7 @@ class UsersController < ApplicationController
   #current users page.
   def index
     # binding.pry
-    @users = User.all
+    @users = User.all.order(score: :desc)
     respond_to do |format|
       format.html {}
       format.json { render :json => @users }
