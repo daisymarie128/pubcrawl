@@ -1,7 +1,10 @@
 class SessionController < ApplicationController
 
-  before_action :check_if_logged_in, :except => [:new, :create, :follow, :unfollow]
-  before_action :check_if_admin, :only => [:index]
+  # before_action :check_if_logged_in, :except => [:new, :create, :follow, :unfollow]
+  # before_action :check_if_admin, :only => [:index]
+  # curl --data "username=pjs&password=p" http://fierce-river-3029.herokuapp.com/session
+
+  skip_before_action :verify_authenticity_token
 
   def new
   end
