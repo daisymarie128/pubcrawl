@@ -42,19 +42,13 @@ app.FindPubView = Backbone.View.extend({
 
     app.pubs.fetch().done(function(){
       app.pubs.each( function(pub){
-        console.log()
         geocoder.geocode({
           'address': pub.get('address')
           }, function(results, status) {
               pubLatLng = new google.maps.LatLng(results[0].geometry.location.lat() , results[0].geometry.location.lng() )
-
-            console.log(pubLatLng)
-            pubView.addMarker(pubLatLng, map)
-
+              pubView.addMarker(pubLatLng, map)
         })
-
       })
-
 
     });
 

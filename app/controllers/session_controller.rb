@@ -13,7 +13,7 @@ class SessionController < ApplicationController
     #creates new session.
     result = nil
     user = User.find_by(:username => params[:username])
-    pub = Pub.find_by(:name => params[:username])
+    pub = Pub.find_by(:username => params[:username])
     # binding.pry
     if (user.present? || pub.present?) && (user.try(:authenticate,(params[:password])) || pub.try(:authenticate, (params[:password])))
       if user.try(:authenticate,(params[:password]))

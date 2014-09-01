@@ -17,4 +17,5 @@ class Pub < ActiveRecord::Base
   has_secure_password
   mount_uploader :image, ImageUploader
   has_many :pub_challenges
+  validates :username, :email, :uniqueness => true, :presence => true
 end
