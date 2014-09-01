@@ -76,7 +76,9 @@ class UsersController < ApplicationController
 
   def current_user_check
     if @current_user
-      render :json => @current_user
+      type = 'user' if @current_user.is_a? User
+      type = 'pub' if @current_user.is_a? Pub
+      render :json => { :user => @current_user, :type => type }
     else
       render :text => 'this shit be empty'
     end

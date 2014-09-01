@@ -33,8 +33,9 @@ $(document).ready(function () {
       type: 'get',
       dataType: 'json',
       success: function(response){
-        if (response.id){
-          app.currentUser = response
+        if (response.user){
+          app.currentUser = response.user
+          app.currentUser.type = response.type
           var loggedInBar = Handlebars.compile(app.templates.loggedInBar);
           console.log(app.currentUser)
           $('#login-functions').html( loggedInBar(app.currentUser) );
