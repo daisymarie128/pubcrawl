@@ -29,14 +29,12 @@ app.PubChallengesCreateView = Backbone.View.extend({
     // saves to the rails database
     // have to do it this way for carrier wave
     var formData = new FormData();
-      formData.append('pub[name]', $('#name').val());
-      formData.append('pub[image]', $('.image')[0].files[0]);
-      formData.append('pub[description]', $('#description').val());
+      formData.append('pub_challenge[name]', $('#name').val());
+      formData.append('pub_challenge[image]', $('.image')[0].files[0]);
+      formData.append('pub_challenge[description]', $('#description').val());
       // formData.append('pub[badge]', $('#badge').val());
-      formData.append('pub[badge]', $('.badge')[0].files[0]);
-      formData.append('pub[point-value]', $('#point-value').val());
-        console.log('were here!')
-        console.log($('#password').val(), $('#confirm_password').val())
+      formData.append('pub_challenge[badge]', $('.badge')[0].files[0]);
+      formData.append('pub_challenge[point-value]', $('#point-value').val());
       $.ajax({
         url: '/pub_challenges',
         data: formData,

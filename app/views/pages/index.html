@@ -62,10 +62,6 @@
     <label for='email'>Email: </label>
     <input type='email' id='email'>
 
-    <label for='avatar'>Avatar: </label>
-    <input type='file' class='avatar'>
-    <input type='hidden' id='image_cache'>
-
     <label for='location'>Location: </label>
     <input type='text' id='location'>
 
@@ -124,7 +120,8 @@
     <label for='address'>Address: </label>
     <input type='text' id='address'>
     <br>
-    <label for='image'>Image: </label><br>
+    <label for='image'>Image: </label>
+    <br>
     <input type='file' class='image'>
     <input type='hidden' id='image_cache'>
 
@@ -212,9 +209,10 @@
     <br>
     <input type='text' id='description'>
     <br>
-    <label for='badge'>Badge: </label>
+    <label for='bagde'>Badge: </label>
     <br>
-    <input type='text' id='badge'>
+    <input type='file' class='badge'>
+    <input type='hidden' id='image_cache'>
     <br>
     <label for='point_value'>Point Value: </label>
     <br>
@@ -225,12 +223,7 @@
       <option value="30">Thirty</option>
     </select>
     <br>
-    <button id="add-task">Add Task</button>
-    <br>
-    <label for='taskname'>Task: </label>
-    <br>
-    <input type='text' class='taskname'>
-    <br>
+
     <button id="create-challenge">Create Pub Challenge</button>
   </form>
 </script>
@@ -271,3 +264,10 @@
     <div id="map_canvas">
     </div><!--///////////////////// close map ///////////////////////////////////////////////-->
 </script>
+
+    <!-- <button id="add-task">Add Task</button> -->
+    <!-- <br> -->
+    <!-- <label for='taskname'>Task: </label> -->
+    <!-- <br> -->
+    <!-- <input type='text' class='taskname'> -->
+    <!-- <br> -->

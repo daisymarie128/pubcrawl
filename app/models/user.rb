@@ -23,6 +23,5 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, ImageUploader
   has_many :followers, :dependent => :destroy
   has_many :friends, :through => :followers
-  has_many :badges, :through => :pub_challenges
-  has_many :achievements
+  has_many :pub_challenges
 end

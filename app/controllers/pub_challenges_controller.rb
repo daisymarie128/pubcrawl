@@ -9,14 +9,15 @@ class PubChallengesController < ApplicationController
   #create new pub challenge: form related
   # then render that to json data
   def create
+    # raise params.inspect
     @pub_challenge = PubChallenge.new pub_challenge_params
     @pub_challenge.pub_id = @current_user.id
     if @pub_challenge.save
-      tasks = JSON.parse params[:tasks]
-      tasks.each do |task|
-        @task = Task.create :task => task
-        @pub_challenge.tasks << @task
-      end
+      # tasks = JSON.parse params[:tasks]
+      # tasks.each do |task|
+      #   @task = Task.create :task => task
+      #   @pub_challenge.tasks << @task
+      # end
       render :json => @pub_challenge, :include => :tasks
     else
       render :json => {:errors => @pub_challenge.errors}
@@ -48,7 +49,7 @@ class PubChallengesController < ApplicationController
 
   private
   def pub_challenge_params
-    params.permit(:name, :image, :image_cache, :description, :badge, :image_cache, :point_value)
+    params.require(:pub_challenge).permit(:name, :image, :image_cache, :description, :badge, :image_cache, :point_value)
   end
 
 end

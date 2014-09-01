@@ -9,5 +9,5 @@
 
 class Achievement < ActiveRecord::Base
   belongs_to :user
-  has_many :pub_challenges
+  belongs_to :pub_challenges
 end
