@@ -42,12 +42,12 @@ app.PubChallengesCreateView = Backbone.View.extend({
         contentType: false,
         processData: false,
         type: 'POST',
-        // success: function (){
-          // app.pubChallenges.fetch(function(){
-          //   console.log('help meeeeee')
-          //   app.router.navigate("pub_challenges/list", true);
-          // }
-        // }
+        success: function (){
+          app.pubChallenges.fetch().done(function(){
+            console.log('help meeeeee')
+            app.router.navigate("pub_challenges/list", true);
+          })
+        }
       })
 
     // var newPubChallenge = new app.PubChallenge({
@@ -63,7 +63,7 @@ app.PubChallengesCreateView = Backbone.View.extend({
     // app.pubChallenges.fetch(function(){
     //   console.log('help meeeeee')
     //   app.router.navigate("pub_challenges/list", true);
-    })
+    // })
 
   },
 
