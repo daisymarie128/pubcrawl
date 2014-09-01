@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token
   before_action :check_if_logged_in, :except => [:new, :create, :follow, :unfollow, :index]
   #before_action :check_if_admin, :only => [:index]
 
