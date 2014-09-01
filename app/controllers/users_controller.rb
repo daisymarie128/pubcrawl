@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   #create new user: sign up code
   def create
     @user = User.new user_params
+    @user.username = @user.username.downcase
     if @user.save
       render :json => @user
     else
