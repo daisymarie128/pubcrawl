@@ -12,4 +12,5 @@
 
 class PersonalChallenge < ActiveRecord::Base
   belongs_to :user
+  # validates :name, :address, :image, :description, :presence => true
 end

@@ -27,4 +27,6 @@ class User < ActiveRecord::Base
   has_many :achievements
   validates :username, :email, :uniqueness => true
   validates :username, :email, :presence => true
+  # validates :username, :email, :uniqueness => true
+  # validates :username, :email, :presence => true
 end
