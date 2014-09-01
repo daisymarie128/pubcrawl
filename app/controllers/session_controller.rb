@@ -11,6 +11,10 @@ class SessionController < ApplicationController
     # raise params.inspect
     #user sign in.
     #creates new session.
+        headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
+    headers['Access-Control-Request-Method'] = '*'
+    headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
     result = nil
     user = User.find_by(:username => params[:username])
     pub = Pub.find_by(:username => params[:username])
