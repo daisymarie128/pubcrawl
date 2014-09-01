@@ -32,13 +32,13 @@ module Pubcrawl
     #     'Access-Control-Allow-Methods' => 'POST, PUT, DELETE, GET, OPTIONS',
     #     'Access-Control-Allow-Headers' => 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
     # })
-    # config.middleware.use Rack::Cors do
-    #   allow do
-    #     origins '*'
-    #     resource %r{\S+},
-    #       :headers => ['Origin', 'Accept', 'Content-Type'],
-    #       :methods => [:post, :get, :put, :delete]
-    #   end
-    # end
+    config.middleware.use Rack::Cors do
+      allow do
+        origins '*'
+        resource %r{\S+},
+          :headers => ['Origin', 'Accept', 'Content-Type'],
+          :methods => [:post, :get, :put, :delete]
+      end
+    end
   end
 end
