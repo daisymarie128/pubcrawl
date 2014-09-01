@@ -37,7 +37,6 @@ class SessionController < ApplicationController
       :user => result,
       :type => type
     }
-
   end
 
   def destroy
