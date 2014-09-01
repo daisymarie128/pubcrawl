@@ -26,7 +26,7 @@ app.LoginView = Backbone.View.extend({
     event.defaultPrevented();
     // saves to the rails database
     $.ajax('/session', {
-      type: 'get',
+      type: 'post',
       dataType: 'json',
       data: {
         username: $('#username').val(),
