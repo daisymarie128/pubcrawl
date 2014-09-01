@@ -1,5 +1,5 @@
 class SessionController < ApplicationController
-  before_action :cors_set_headers
+
   before_action :check_if_logged_in, :except => [:new, :create, :follow, :unfollow]
   before_action :check_if_admin, :only => [:index]
 
@@ -61,12 +61,5 @@ class SessionController < ApplicationController
     #^^ should this be changed I dont fucking know
     def check_if_admin
       redirect_to(root_path) unless @current_user.is_admin?
-    end
-
-    def cors_set_headers
-      headers['Access-Control-Allow-Origin'] = '*'
-      headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
-      headers['Access-Control-Request-Method'] = '*'
-      headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
     end
 end
