@@ -2,8 +2,8 @@ Rails.application.routes.draw do
 
   resources :users, :pub_challenges, :pubs, :tasks, :achievements
   root :to => 'pages#index'
-  # get '/session' => 'session#new'
-  get '/session' => 'session#create'
+  get '/session' => 'session#new'
+  post '/session' => 'session#create'
   delete '/session' => 'session#destroy'
   get '/current_user' => 'users#current_user_check'
 
