@@ -11,7 +11,7 @@ $(document).ready(function () {
     pubsListView: $('#pubs-list-template').html(),
     loginView: $('#login-template').html(),
     createPubChallengeView: $('#pub-challenge-template').html(),
-    addTask: $('#new-task-template').html(),
+    createTaskView: $('#new-task-template').html(),
     pubChallengesListView: $('#pub-challenge-list-template').html(),
     usersAchievementsView: $('#user-achievements-list-template').html(),
     findPubView: $('#find-pub-template').html()
@@ -26,6 +26,9 @@ $(document).ready(function () {
 
   app.pubChallenges = new app.PubChallenges();
   var challengeRequest = app.pubChallenges.fetch();
+
+  app.tasks = new app.Tasks();
+  var taskRequest = app.tasks.fetch();
 
 
   $.when(userRequest, challengeRequest, pubRequest).done(function () {

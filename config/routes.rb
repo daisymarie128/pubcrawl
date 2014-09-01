@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :users, :pub_challenges, :pubs
+  resources :users, :pub_challenges, :pubs, :tasks, :achievements
   root :to => 'pages#index'
   get '/session' => 'session#new'
   post '/session' => 'session#create'

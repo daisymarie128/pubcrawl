@@ -45,7 +45,7 @@ app.PubChallengesCreateView = Backbone.View.extend({
         success: function (){
           app.pubChallenges.fetch().done(function(){
             console.log('help meeeeee')
-            app.router.navigate("pub_challenges/list", true);
+            app.router.navigate("tasks/create", true);
           })
         }
       })

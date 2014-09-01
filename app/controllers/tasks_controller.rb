@@ -18,7 +18,7 @@ class TasksController < ApplicationController
   #cr
   def create
     @task = Task.new task_params
-    @task.pub_challenge_id = @pub_challenge.id
+    @task.pub_challenge_id = PubChallenge.last.id
     if @task.save
       render :json => @task
     else
@@ -39,7 +39,7 @@ class TasksController < ApplicationController
 
     private
       def task_params
-      params.require(:task).permit(:task)
+      params.permit(:task)
       end
 
 end

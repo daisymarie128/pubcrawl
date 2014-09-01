@@ -9,6 +9,7 @@ app.Router = Backbone.Router.extend({
     'pubs/create': 'createPub',
     'pubs/list': 'viewPubs',
     'pub_challenges/create': 'createPubChallenges',
+    'tasks/create': 'createTask',
     'pub_challenges/list': 'pubChallengesListView',
     'pubs/find_pub': 'findPubView'
   },
@@ -52,6 +53,11 @@ app.Router = Backbone.Router.extend({
   createPubChallenges: function () {
     var createPubChallengeView = new app.PubChallengesCreateView();
     createPubChallengeView.render();
+  },
+
+  createTask: function () {
+    var createTaskView = new app.TaskCreateView();
+    createTaskView.render();
   },
 
   pubChallengesListView: function () {

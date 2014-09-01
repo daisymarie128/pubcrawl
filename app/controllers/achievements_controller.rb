@@ -3,7 +3,7 @@ class AchievementsController < ApplicationController
 
   def index
     @achievements = @current_user.achievements
-    render :json => @achievement
+    render :json => @achievements
   end
 
   def new
