@@ -41,11 +41,14 @@ app.PubChallengesCreateView = Backbone.View.extend({
         cache: false,
         contentType: false,
         processData: false,
-        type: 'POST'
-      }).done( function (){
-      }).fail( function (){
-        console.log('failed')
-      });
+        type: 'POST',
+        // success: function (){
+          // app.pubChallenges.fetch(function(){
+          //   console.log('help meeeeee')
+          //   app.router.navigate("pub_challenges/list", true);
+          // }
+        // }
+      })
 
     // var newPubChallenge = new app.PubChallenge({
     //   name: $('#name').val(),
@@ -59,8 +62,8 @@ app.PubChallengesCreateView = Backbone.View.extend({
     // Send view to a users list
     // app.pubChallenges.fetch(function(){
     //   console.log('help meeeeee')
-      app.router.navigate("pub_challenges/list", true);
-    // })
+    //   app.router.navigate("pub_challenges/list", true);
+    })
 
   },
 
