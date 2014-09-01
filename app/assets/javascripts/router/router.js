@@ -5,6 +5,7 @@ app.Router = Backbone.Router.extend({
     '': 'index',
     'login': 'login',
     'users/create': 'createUser',
+    'users/edit': 'editUser',
     'users/list': 'viewUsers',
     'pubs/create': 'createPub',
     'pubs/list': 'viewPubs',
@@ -30,6 +31,11 @@ app.Router = Backbone.Router.extend({
   },
 
   createUser: function () {
+    var userView = new app.UserView();
+    userView.render();
+  },
+
+  editUser: function () {
     var userView = new app.UserView();
     userView.render();
   },

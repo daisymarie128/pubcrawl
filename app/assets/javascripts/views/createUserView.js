@@ -16,7 +16,7 @@ app.UserView = Backbone.View.extend({
 
   render: function () {
     var userView = Handlebars.compile(app.templates.userView);
-    this.$el.html( userView );
+    this.$el.html( userView( app.currentUser || {} ) );
     this.$el.attr('id', 'user-view');
     $('#content').html(this.el);
   },
