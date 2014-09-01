@@ -67,7 +67,6 @@ app.Router = Backbone.Router.extend({
   findPubView: function () {
     var findPubView = new app.FindPubView();
     findPubView.render();
-    findPubView.display_map(-33.87, 151.21, 12);
   }
 });
 

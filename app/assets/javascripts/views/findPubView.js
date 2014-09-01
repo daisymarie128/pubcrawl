@@ -15,10 +15,12 @@ app.FindPubView = Backbone.View.extend({
 
   render: function () {
     // var findPubView = Handlebars.compile();
-    console.log('endering')
+    console.log('rendering find pub')
     this.$el.html( app.templates.findPubView );
     this.$el.attr('id', 'find-pub-view');
     $('#content').html(this.el);
+    this.display_map(-33.87, 151.21, 12);
+
   },
 
   display_map: function (lat, lng, zoom) {
@@ -31,7 +33,41 @@ app.FindPubView = Backbone.View.extend({
 
     var canvas = $('#map_canvas').get(0);
 
-    map = new google.maps.Map(canvas, mapOptions);
+    var map = new google.maps.Map(canvas, mapOptions);
+    var geocoder = new google.maps.Geocoder();
+
+    var pubLatLng;
+
+    var pubView = this;
+
+    app.pubs.fetch().done(function(){
+      app.pubs.each( function(pub){
+        console.log()
+        geocoder.geocode({
+          'address': pub.get('address')
+          }, function(results, status) {
+              pubLatLng = new google.maps.LatLng(results[0].geometry.location.lat() , results[0].geometry.location.lng() )
+
+            console.log(pubLatLng)
+            pubView.addMarker(pubLatLng, map)
+
+        })
+
+      })
+
+
+    });
+
+
+  },
+  addMarker: function(position, map) {
+    new google.maps.Marker({
+          position: position,
+          map: map,
+          animation: google.maps.Animation.DROP,
+          title: 'Click to zoom'
+        })
+
   }
 
 });

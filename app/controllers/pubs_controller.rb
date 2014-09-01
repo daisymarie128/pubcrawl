@@ -9,6 +9,7 @@ class PubsController < ApplicationController
     # binding.pry
     @pub = Pub.new pub_params
     # binding.pry
+    @pub.username = @pub.username.downcase
     if @pub.save
       render :json => @pub
     else

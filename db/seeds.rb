@@ -10,8 +10,8 @@ u5 = User.create(:first_name => 'u5', :last_name => 'u5last', :username => 'u5',
 
 
 
-p1 = Pub.create(:name => 'pubname', :address => 'adress', :description => 'description', :image => 'http://placekitten.com/500/500', :email => 'pub@gmail.com', :password => 'p', :password_confirmation => 'p')
-p2 = Pub.create(:name => 'pubname2', :address => 'adress2', :description => 'description', :image => 'http://placekitten.com/500/500', :email => 'pub2@gmail.com', :password => 'p', :password_confirmation => 'p')
+p1 = Pub.create(:name => 'pjs', :address => '57 King St, Sydney NSW 2000', :description => 'description', :image => 'http://placekitten.com/500/500', :email => 'pub@gmail.com', :password => 'p', :password_confirmation => 'p')
+p2 = Pub.create(:name => 'elloco', :address => '111 Sussex St, Sydney NSW 2000', :description => 'description', :image => 'http://placekitten.com/500/500', :email => 'pub2@gmail.com', :password => 'p', :password_confirmation => 'p')
 
 c1 = PubChallenge.create(:name => 'challeneg name', :image => 'image', :description => 'description', :badge => 'badge', :point_value => "20")
 c2 = PubChallenge.create(:name => 'challeneg for a different pub', :image => 'image', :description => 'description', :badge => 'badge', :point_value => "20")
