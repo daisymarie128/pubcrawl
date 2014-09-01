@@ -18,4 +18,5 @@ class PubChallenge < ActiveRecord::Base
   mount_uploader :badge, BadgeUploader
   belongs_to :pub
   has_many :tasks
+  # validates :name, :image, :description, :badge, :point_value, :presence => true
 end

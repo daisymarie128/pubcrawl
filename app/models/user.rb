@@ -24,6 +24,6 @@ class User < ActiveRecord::Base
   has_many :followers, :dependent => :destroy
   has_many :friends, :through => :followers
   has_many :pub_challenges
-  validates :username, :email, :uniqueness => true
-  validates :username, :email, :presence => true
+  # validates :username, :email, :uniqueness => true
+  # validates :username, :email, :presence => true
 end

@@ -9,4 +9,5 @@
 
 class Task < ActiveRecord::Base
   belongs_to :pub_challenge
+  validates :task, :presence => true
 end
