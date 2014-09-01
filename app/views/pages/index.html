@@ -248,9 +248,9 @@
       {{#each pubChallenges}}
       <div class ="challenge-holder">
         <li class="challenge-name">{{name}}</li>
-        <li class="challenge-image">{{image}}</li>
+        <li class="challenge-image"><img src="{{image.url}}"></li>
         <li class="challenge-description">{{description}}</li>
-        <li class="challenge-badge">{{badge}}</li>
+        <li class="challenge-badge"><img src="{{badge.url}}"></li>
         <li class="challenge-tasks">CHALLENGE!
           <ol>
             {{#each this.tasks}}
