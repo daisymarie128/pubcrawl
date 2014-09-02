@@ -4,8 +4,9 @@ class ApplicationController < ActionController::Base
 
   before_action :set_headers
 
-  skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token#, :if =>lambda{ params[:api_key].present?}
   protect_from_forgery with: :exception
+  # protect_from_forgery :except => :create
   before_action :authenticate_user
 
   private
