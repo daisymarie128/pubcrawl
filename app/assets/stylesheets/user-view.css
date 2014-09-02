@@ -12,7 +12,7 @@
     width: inherit;
     display: inline;
 /*    float: left;*/
-    font-family: Avenir Next;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.8em;
     text-transform: uppercase;
 }
@@ -20,14 +20,14 @@
 .user-last-name{
     width: 30%;
     display: inline;
-    font-family: Avenir Next;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.8em;
     text-transform: uppercase;
 }
 
 .user-username{
     width: inherit;
-    font-family: Avenir Next;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.8em;
     text-transform: uppercase;
     font-weight: bold;
@@ -35,7 +35,7 @@
 
 .user-location{
     width: inherit;
-    font-family: Avenir Next;
+    font-family: 'Open Sans', sans-serif;
     font-size: 1.8em;
     text-transform: uppercase;
 }

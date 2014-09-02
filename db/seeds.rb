@@ -12,7 +12,7 @@ u5 = User.create(:first_name => 'u5', :last_name => 'u5last', :username => 'u5',
 
 p1 = Pub.create(:username => 'pjs', :name => "P.J O'Briens", :address => '57 King St, Sydney NSW 2000', :description => 'description', :image => 'http://placekitten.com/500/500', :email => 'pub@gmail.com', :password => 'p', :password_confirmation => 'p')
 p2 = Pub.create(:username => 'elloco', :name => 'El Loco at Slip Inn', :address => '111 Sussex St, Sydney NSW 2000', :description => 'description', :image => 'http://placekitten.com/500/500', :email => 'pub2@gmail.com', :password => 'p', :password_confirmation => 'p')
-p3 = Pub.create(:username => 'elloco', :name => "The Lord Nelson Brewery Hotel", :address => '19 Kent St
+p3 = Pub.create(:username => 'nelson', :name => "The Lord Nelson Brewery Hotel", :address => '19 Kent St
 The Rocks NSW 2000', :description => 'description', :image => 'http://placekitten.com/500/500', :email => 'pub3@gmail.com', :password => 'p', :password_confirmation => 'p')
 
 c1 = PubChallenge.create(:name => 'challeneg name', :image => 'image', :description => 'description', :badge => 'badge', :point_value => "20")

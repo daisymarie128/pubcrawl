@@ -4,8 +4,9 @@
 @font-face { font-family: Langdon; src: url('/assets/Langdon.otf'); }
 
 
+
 h2{
-  font-family: Avenir Next;
+  font-family: 'Open Sans', sans-serif;
   font-size: 2em;
   text-transform: uppercase;
 }
@@ -43,7 +44,7 @@ header{
   right: 0;
   padding: 2em;
   background-color: #E8C53A;
-  font-family: Avenir Next;
+  font-family: 'Open Sans', sans-serif;
   font-size: 0.7em;
   text-transform: uppercase;
   font-weight: bold;
@@ -76,7 +77,7 @@ header{
 }
 
 #content{
-  font-family: Avenir Next;
+  font-family: 'Open Sans', sans-serif;
   font-size: 0.7em;
   padding-top: 2%;
 }
