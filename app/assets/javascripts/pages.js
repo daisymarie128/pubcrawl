@@ -8,11 +8,13 @@ $(document).ready(function () {
     userView: $('#user-template').html(),
     createPub: $('#create-pub-template').html(),
     usersListView: $('#users-list-template').html(),
+    pubSingleModelView: $('#pubs-single-model-template').html(),
     pubsListView: $('#pubs-list-template').html(),
     loginView: $('#login-template').html(),
     createPubChallengeView: $('#pub-challenge-template').html(),
     createTaskView: $('#new-task-template').html(),
     pubChallengesListView: $('#pub-challenge-list-template').html(),
+    pubChallengesListSpecific: $('#pub-challenge-list-specific').html(),
     usersAchievementsView: $('#user-achievements-list-template').html(),
     findPubView: $('#find-pub-template').html()
   }
