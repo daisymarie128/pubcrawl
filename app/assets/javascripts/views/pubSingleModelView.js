@@ -3,6 +3,7 @@ var app = app || {};
 app.PubSingleModelView = Backbone.View.extend({
   tagName: 'div',
   events: {
+    'click .view-button': 'viewPubChallengesListSpecific'
   },
 
   initialize: function () {
@@ -21,6 +22,6 @@ app.PubSingleModelView = Backbone.View.extend({
   },
 
   viewPubChallengesListSpecific: function () {
-
+    app.router.navigate("pub_challenges/" + this.model.get('id'), true)
   }
 });

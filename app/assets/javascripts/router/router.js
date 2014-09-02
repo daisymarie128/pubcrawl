@@ -76,8 +76,9 @@ app.Router = Backbone.Router.extend({
     pubChallengesListView.render();
   },
 
-  pubChallengesListSpecific: function () {
-    var pubChallengesListSpecific = new app.PubChallengesListSpecific();
+  pubChallengesListSpecific: function (id) {
+    var pub = app.pubs.get(id)
+    var pubChallengesListSpecific = new app.PubChallengesListSpecific({model: pub });
     pubChallengesListSpecific.render();
   },
 

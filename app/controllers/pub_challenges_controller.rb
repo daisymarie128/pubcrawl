@@ -39,7 +39,7 @@ class PubChallengesController < ApplicationController
 
   #current pub challenge page.
   def index
-    @pub_challenges = PubChallenge.all
+    @pub_challenges = PubChallenge.where(:pub_id => params[:pub_id])
     # @pub_challenges = @current_pub.pub_challenges
     respond_to do |format|
       format.html {}
