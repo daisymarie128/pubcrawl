@@ -29,6 +29,7 @@ app.CreatePub = Backbone.View.extend({
     var formData = new FormData();
     formData.append('pub[image]', $('#image').val());
       formData.append('pub[name]', $('#name').val());
+      formData.append('pub[username]', $('#username').val());
       formData.append('pub[address]', $('#address').val());
       formData.append('pub[email]', $('#email').val());
       formData.append('pub[image]', $('.image')[0].files[0]);

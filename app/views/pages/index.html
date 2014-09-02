@@ -65,8 +65,9 @@
     {{#if avatar}}
     <img src="{{avatar.url}}">
     {{/if}}
-    <label for='image'>Image: </label>
-    <input type='file' class='image'>
+
+    <label for='avatar'>Avatar: </label>
+    <input type='file' class='avatar'>
     <input type='hidden' id='image_cache'>
 
     <label for='first_name'>First Name: </label>
@@ -99,7 +100,7 @@
       {{#each users}}
       <div class="user">
         <li class="user-username">{{username}}</li>
-        <li class="user-avatar">{{avatar.url}}</li>
+        <div class="user-avatar"><li><img src="{{avatar.url}}"></li></div>
         <li class="user-first-name">{{first_name}}</li>
         <li class="user-last-name">{{last_name}}</li>
         <li class="user-location">{{location}}</li>
