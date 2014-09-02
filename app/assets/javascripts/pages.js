@@ -17,6 +17,11 @@ $(document).ready(function () {
     findPubView: $('#find-pub-template').html()
   }
 
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
 
   app.users = new app.Users();
   var userRequest = app.users.fetch();

@@ -45,11 +45,14 @@ app.UserView = Backbone.View.extend({
         cache: false,
         contentType: false,
         processData: false,
-        type: 'POST'
-      }).done( function (){
-        console.log('did this hsit work')
-      }).fail( function (){
-        console.log('i assumed this would fail')
+        type: 'POST',
+        success: function (){
+          console.log('did this hsit work')
+          app.router.navigate("users/list", true);
+        },
+        error: function (){
+          console.log('i assumed this would fail')
+        }
       });
 
 
@@ -66,7 +69,7 @@ app.UserView = Backbone.View.extend({
     // adds to the backbone memory (browser)
     // app.users.add(newUser);
     // Send view to a users list
-    app.router.navigate("users/list", true);
+
   }
 
 });

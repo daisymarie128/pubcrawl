@@ -44,11 +44,14 @@ app.CreatePub = Backbone.View.extend({
         cache: false,
         contentType: false,
         processData: false,
-        type: 'POST'
-      }).done( function (){
+        type: 'POST',
+        sucess: function (){
         console.log('did this hsit work')
-      }).fail( function (){
+        app.router.navigate("pubs/list", true);
+        },
+        fail: function (){
         console.log('i assumed this would fail')
+      }
       });
 
 
@@ -58,7 +61,6 @@ app.CreatePub = Backbone.View.extend({
     // adds to the backbone memory (browser)
     // app.users.add(newUser);
     // Send view to a users list
-    app.router.navigate("pubs/list", true);
   }
 
 });
