@@ -38,7 +38,11 @@ app.Router = Backbone.Router.extend({
   },
 
   editUser: function () {
-    var userView = new app.UserView();
+    if (app.currentUser.type == 'user') {
+      var userView = new app.UserView();
+    } else {
+      var userView = new app.CreatePub();
+    }
     userView.render();
   },
 

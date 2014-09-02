@@ -23,7 +23,7 @@ app.LoginView = Backbone.View.extend({
 
   login: function (event) {
     // stops the form from submitting params with the button.
-    event.defaultPrevented();
+    event.preventDefault();
     // saves to the rails database
     $.ajax('/session', {
       type: 'post',

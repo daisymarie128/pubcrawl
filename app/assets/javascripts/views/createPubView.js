@@ -16,7 +16,7 @@ app.CreatePub = Backbone.View.extend({
 
   render: function () {
     var createPub = Handlebars.compile(app.templates.createPub);
-    this.$el.html( createPub );
+    this.$el.html( createPub(app.currentUser || {} ) );
     this.$el.attr('id', 'create-pub');
     $('#content').html(this.el);
   },
