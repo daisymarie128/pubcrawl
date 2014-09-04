@@ -14,6 +14,13 @@ class UsersController < ApplicationController
     if @user.save
       # Tell the UserMailer to send a welcome email after save
       UserMailer.welcome_email(@user).deliver
+
+      ###Sends the User an email with sign_in_token
+      UserMailer.registration_confirmation(@user, login_url+"/#{@user.sign_in_token}").deliver
+
+      flash[:success] = "Please Check Your Email to Verify your Registration!"
+      redirect_to (verifyemail_path)
+
       render :json => @user
     else
       render :json => {:errors => @user.errors}

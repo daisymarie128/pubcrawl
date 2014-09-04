@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root :to => 'pages#index'
   get '/session' => 'session#new'
   post '/session' => 'session#create'
+  # match '/login/:sign_in_token', :to => 'sessions#new'
   delete '/session' => 'session#destroy'
   get '/current_user' => 'users#current_user_check'
 

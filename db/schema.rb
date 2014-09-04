@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140902071532) do
+ActiveRecord::Schema.define(version: 20140904063322) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,9 +74,12 @@ ActiveRecord::Schema.define(version: 20140902071532) do
     t.string   "score"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_admin",        default: false
-    t.boolean  "is_pub",          default: false
-    t.boolean  "is_pub_verified", default: false
+    t.boolean  "is_admin",              default: false
+    t.boolean  "is_pub",                default: false
+    t.boolean  "is_pub_verified",       default: false
+    t.string   "sign_in_token"
+    t.boolean  "registration_complete"
+    t.string   "password_reset"
   end
 
 end
