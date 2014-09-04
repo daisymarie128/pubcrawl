@@ -1,7 +1,7 @@
 / /////////////////////////////////////////////login bar template ////////////
 %script#login-bar-template{:type => "text/template"}
   %ul
-    %a{:href => "#login"} <a href="#login">
+    %a{:href => "#login"}
       %li Login
     %a{:href => "#users/create"}
       %li Sign up as User
@@ -111,22 +111,22 @@
       {{/if}}
       %label{:for => "name"} Pub Name:
       %input#name{:autofocus => "true", :type => "text", :value => "{{name}}"}
-        %label{:for => "address"} Address:
-        %input#address{:type => "text", :value => "{{address}}"}
-          %br
-            %label{:for => "image"} Image:
-            %br
-              %input.image{:type => "file"}
-                %input#image_cache{:type => "hidden", :value => "{{image_url}}"}
-                  %label{:for => "email"} Email:
-                  %input#email{:type => "email", :value => "{{email}}"}
-                    %label{:for => "description"} Description:
-                    %textarea#description{:rows => "5", :type => "textarea"} {{description}}
-                    %label{:for => "password"} Password:
-                    %input#password{:type => "password"}
-                      %label{:for => "confirm_password"} Confirm password:
-                      %input#confirm_password{:type => "password"}
-                        %button Create Pub
+      %label{:for => "address"} Address:
+      %input#address{:type => "text", :value => "{{address}}"}
+      %br
+      %label{:for => "image"} Image:
+      %br
+      %input.image{:type => "file"}
+      %input#image_cache{:type => "hidden", :value => "{{image_url}}"}
+      %label{:for => "email"} Email:
+      %input#email{:type => "email", :value => "{{email}}"}
+      %label{:for => "description"} Description:
+      %textarea#description{:rows => "5", :type => "textarea"} {{description}}
+      %label{:for => "password"} Password:
+      %input#password{:type => "password"}
+      %label{:for => "confirm_password"} Confirm password:
+      %input#confirm_password{:type => "password"}
+      %button Create Pub
 / /////////////////////////////////////////////PUB SINGLE MODEL template ////////////
 %script#pubs-single-model-template{:type => "text/template"}
   %ul
@@ -162,11 +162,11 @@
       %form#login{:action => "#"}
         %label{:for => "username"} Username:
         %br
-          %input#username{:type => "text"}
-            %label{:for => "password"} Password:
-            %br
-              %input#password{:type => "password"}
-                %button Login In
+        %input#username{:type => "text"}
+        %label{:for => "password"} Password:
+        %br
+        %input#password{:type => "password"}
+        %button Login In
     / /////// close login //////
   / /////// close loginpage //////
 / /////////////////////////////////////////////pub challenge template ////////////
@@ -175,38 +175,38 @@
   %form#create-pub-challenge-form{:action => "#"}
     %label{:for => "name"} Name Your Challenge:
     %br
-      %input#name{:autofocus => "true", :type => "text"}
-        %br
-          %label{:for => "image"} Image:
-          %br
-            %input.image{:type => "file"}
-              %input#image_cache{:type => "hidden"}
-                %br
-                  %label{:for => "description"} Description:
-                  %br
-                    %input#description{:type => "text"}
-                      %br
-                        %label{:for => "bagde"} Badge:
-                        %br
-                          %input.badge{:type => "file"}
-                            %input#image_cache{:type => "hidden"}
-                              %br
-                                %label{:for => "point_value"} Point Value:
-                                %br
-                                  %select#point-value{:name => "Point Value"}
-                                    %option{:value => "5"} Five
-                                    %option{:value => "10"} Ten
-                                    %option{:value => "20"} Twenty
-                                    %option{:value => "30"} Thirty
-                                  %br
-                                    %button#create-challenge Create Pub Challenge
+    %input#name{:autofocus => "true", :type => "text"}
+    %br
+    %label{:for => "image"} Image:
+    %br
+    %input.image{:type => "file"}
+    %input#image_cache{:type => "hidden"}
+    %br
+    %label{:for => "description"} Description:
+    %br
+    %input#description{:type => "text"}
+    %br
+    %label{:for => "bagde"} Badge:
+    %br
+    %input.badge{:type => "file"}
+    %input#image_cache{:type => "hidden"}
+    %br
+    %label{:for => "point_value"} Point Value:
+    %br
+    %select#point-value{:name => "Point Value"}
+      %option{:value => "5"} Five
+      %option{:value => "10"} Ten
+      %option{:value => "20"} Twenty
+      %option{:value => "30"} Thirty
+    %br
+      %button#create-challenge Create Pub Challenge
 / /////////////////////////////////////////////new task pub challenge template ////////////
 %script#new-task-template{:type => "text/template"}
   %label{:for => "task"} Task:
   %br
-    %input.task{:name => "task", :type => "text"}
-      %br
-        %button#create-task Create Task
+  %input.task{:name => "task", :type => "text"}
+  %br
+  %button#create-task Create Task
 / /////////////////////////////////////////////pub challenge list template ////////////
 %script#pub-challenge-list-template{:type => "text/template"}
   %h2 List of Pub Challenges
@@ -223,7 +223,8 @@
         CHALLENGE!
         %ol
           {{#each this.tasks}}
-          %a{:href => "#qrcode"} <liclass="challenge-task-items">{{this}}
+          %a{:href => "#qrcode"}
+            %li{:class=>"challenge-task-items"}{{this}}
       {{/each}}
     / /////////close challenge holder ///////
     {{/each}}
@@ -243,17 +244,10 @@
         CHALLENGE!
         %ol
           {{#each this.tasks}}
-          %a{:href => "#qrcode"} <liclass="challenge-task-items">{{this}}
+          %a{:href => "#qrcode"}
+            %li{:class=>"challenge-task-items"} {{this}}
       {{/each}}
-    / /////////close challenge holder ///////
     {{/each}}
 %script#find-pub-template{:type => "text/template"}
   %h2 Find Pub
   #map_canvas
-  / ///////////////////// close map ///////////////////////////////////////////////
-/ <button id="add-task">Add Task</button>
-/ <br>
-/ <label for='taskname'>Task: </label>
-/ <br>
-/ <input type='text' class='taskname'>
-/ <br>
