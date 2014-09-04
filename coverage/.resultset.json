@@ -765,8 +765,19 @@
         null,
         null,
         null
+      ],
+      "/Users/straw/projects/wdi-5/deploy/pubcrawl/app/mailers/user_mailer.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null
       ]
     },
-    "timestamp": 1409821129
+    "timestamp": 1409822075
   }
 }
