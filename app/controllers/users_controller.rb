@@ -12,6 +12,8 @@ class UsersController < ApplicationController
     @user = User.new user_params
     @user.username = @user.username.downcase
     if @user.save
+      # Tell the UserMailer to send a welcome email after save
+      UserMailer.welcome_email(@user).deliver
       render :json => @user
     else
       render :json => {:errors => @user.errors}
