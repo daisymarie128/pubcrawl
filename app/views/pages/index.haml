@@ -1,7 +1,7 @@
 / /////////////////////////////////////////////login bar template ////////////
 %script#login-bar-template{:type => "text/template"}
   %ul
-    %a{:href => "#login"}
+    %a{:href => "#login"} <a href="#login">
       %li Login
     %a{:href => "#users/create"}
       %li Sign up as User
@@ -60,20 +60,20 @@
         {{/if}}
         %label{:for => "avatar"} Avatar:
         %input.avatar{:type => "file"}
-          %input#image_cache{:type => "hidden"}
-            %label{:for => "first_name"} First Name:
-            %input#first_name{:autofocus => "true", :type => "text", :value => "{{ first_name }}"}
-              %label{:for => "last_name"} Last Name:
-              %input#last_name{:type => "text", :value => "{{ last_name }}"}
-                %label{:for => "email"} Email:
-                %input#email{:type => "email", :value => "{{ email }}"}
-                  %label{:for => "location"} Location:
-                  %input#location{:type => "text", :value => "{{ location }}"}
-                    %label{:for => "password"} Password:
-                    %input#password{:type => "password"}
-                      %label{:for => "password_confirmation"} Confirm password:
-                      %input#password_confirmation{:type => "password"}
-                        %button Create
+        %input#image_cache{:type => "hidden"}
+        %label{:for => "first_name"} First Name:
+        %input#first_name{:autofocus => "true", :type => "text", :value => "{{ first_name }}"}
+        %label{:for => "last_name"} Last Name:
+        %input#last_name{:type => "text", :value => "{{ last_name }}"}
+        %label{:for => "email"} Email:
+        %input#email{:type => "email", :value => "{{ email }}"}
+        %label{:for => "location"} Location:
+        %input#location{:type => "text", :value => "{{ location }}"}
+        %label{:for => "password"} Password:
+        %input#password{:type => "password"}
+        %label{:for => "password_confirmation"} Confirm password:
+        %input#password_confirmation{:type => "password"}
+        %button Create
 / /////////////////////////////////////////////user list template ////////////
 %script#users-list-template{:type => "text/template"}
   %h2 List of Users
