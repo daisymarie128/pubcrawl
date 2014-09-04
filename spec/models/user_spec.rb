@@ -25,39 +25,50 @@ require 'rails_helper'
 
 RSpec.describe User, :type => :model do
   describe 'A User' do
-    before do
-      @user = User.create(:name => 'User1')
+
+    context 'with valid input' do
+      before do
+        @user = User.create(:username => 'user1', :email => 'hello@email.com', :password => 'password', :password_confirmation => 'password')
+      end
+
+      it "should exist" do
+        expect(@user).to be
+      end
+
+      it "should have a username" do
+        expect(@user.username).to eq('user1')
+      end
+
+      it "should have an email" do
+        expect(@user.email).to eq('hello@email.com')
+      end
+
+      it "should have an valid password" do
+        expect(@user.password).to eq('password')
+        expect(@user.password_confirmation).to eq('password')
+      end
+
+      it "should not be approved" do
+        expect(@user.registration_complete).to eq(false)
+      end
+
+      it 'should generate a token to sign in' do
+        token = @user.generate_sign_in_token
+        expect(@user.sign_in_token).to eq(token)
+      end
     end
 
-  #   it "should not be squishy" do
-  #     expect(@apple.squishy?).to eq(false)
-  #   end
+    context 'with invalid input' do
+      before do
+        @user = User.create(:username => 'i', :email => '')
+      end
 
-  #   it 'should remember what class it is using Single Table Inheritance (STI)' do
-  #     apple = Fruit.find(@apple.id)
-  #     expect(apple.class).to eq(Apple)
-  #     expect(apple).to eq(@apple)
-  #     expect(apple.is_a?(Fruit)).to eq(true)
-  #     expect(apple.class.ancestors).to include(Fruit)
-  #   end
-  # end
-
-  # describe "A pear" do
-  #   before do
-  #     @pear = Pear.create(:name => 'Prickly')
-  #   end
-
-  #   it "should be kinda squishy" do
-  #     expect(@pear.squishy?).to eq(true)
-  #   end
-
-  #   it 'should remember what class it is using Single Table Inheritance (STI)' do
-  #     pear = Fruit.find(@pear.id)
-  #     expect(pear.class).to eq(Pear)
-  #     expect(pear).to eq(@pear)
-  #     expect(pear.is_a?(Fruit)).to eq(true)
-  #     expect(pear.class.ancestors).to include(Fruit)
-  #   end
+      it "should not have an id" do
+        expect(@user.id).to_not be
+      end
+    end
   end
+
+
 end
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140904063322) do
+ActiveRecord::Schema.define(version: 20140904083719) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,9 @@ ActiveRecord::Schema.define(version: 20140904063322) do
     t.datetime "updated_at"
     t.string   "username"
     t.string   "image"
+    t.string   "sign_in_token"
+    t.string   "password_reset"
+    t.boolean  "registration_complete", default: false
   end
 
   create_table "tasks", force: true do |t|
@@ -78,8 +81,8 @@ ActiveRecord::Schema.define(version: 20140904063322) do
     t.boolean  "is_pub",                default: false
     t.boolean  "is_pub_verified",       default: false
     t.string   "sign_in_token"
-    t.boolean  "registration_complete"
     t.string   "password_reset"
+    t.boolean  "registration_complete", default: false
   end
 
 end

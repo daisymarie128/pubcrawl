@@ -22,7 +22,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :name, :email, :password, :password_confirmation, :sign_in_token, :registration_complete, :reset_password
+  # attr_accessible :name, :email, :password, :password_confirmation, :sign_in_token, :registration_complete, :reset_password
 
   #This generates sign_in_token
   def generate_sign_in_token
@@ -35,8 +35,7 @@ class User < ActiveRecord::Base
   has_many :friends, :through => :followers
   has_many :pub_challenges
   has_many :achievements
-  validates :username, :email, :uniqueness => true
-  validates :username, :email, :presence => true
-  # validates :username, :email, :uniqueness => true
-  # validates :username, :email, :presence => true
+  validates :username, :email, :uniqueness => true, :presence => true
+  validates :username, :length => { in: 3..20 }
+  validates :password, :length => { in: 6..20 }
 end
