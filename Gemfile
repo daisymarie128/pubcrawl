@@ -44,6 +44,7 @@ gem 'cloudinary'
 gem 'geocoder'
 gem 'rack-cors',  :require => 'rack/cors'
 
+gem 'haml'
 
 gem 'rails_12factor', group: :production
 

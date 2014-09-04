@@ -1,0 +1,259 @@
+/ /////////////////////////////////////////////login bar template ////////////
+%script#login-bar-template{:type => "text/template"}
+  %ul
+    %a{:href => "#login"}
+      %li Login
+    %a{:href => "#users/create"}
+      %li Sign up as User
+    %a{:href => "#pubs/create"}
+      %li Sign up as Pub
+/ /////////////////////////////////////////////logged in bar template ////////////
+%script#logged-in-bar-template{:type => "text/template"}
+  %ul
+    {{#if name}}
+    %h1 Name: {{name}}
+    {{^}}
+    %h1 Username: {{username}}
+    {{/if}}
+    %a{:href => "#"}
+      %li Home
+    %a{:href => "#users/edit"}
+      %li Settings
+    %a{:href => "#logout"}
+      %li.logout Logout
+/ /////////////////////////////////////////////user nav bar template ////////////
+%script#user-nav-bar-template{:type => "text/template"}
+  #does-this-work
+    %ul
+      %a{:href => "#users/list"}
+        %li View Top Scorers
+      %a{:href => "#pubs/list"}
+        %li View Pubs
+      %a{:href => "#pubs/find_pub"}
+        %li Find a Pub
+  / /////////close does this work ///
+/ /////////////////////////////////////////////login bar template ////////////
+%script#pub-nav-bar-template{:type => "text/template"}
+  %nav
+    %ul
+      %a{:href => "#users/list"}
+        %li View Your Top Users
+      %a{:href => "#pubs/list"}
+        %li View Pubs
+      %a{:href => "#pub_challenges/create"}
+        %li Create Pub Challenge
+      %a{:href => "#pub_challenges/list"}
+        %li View Pub Challenges
+/ /////////////////////////////////////////////user template ////////////
+%script#user-template{:type => "text/template"}
+  %h2 Create User
+  %form#create-user-form{:action => "#"}
+    {{#if username}}
+    %label{:for => "username"} Username: {{username}}
+    {{^}}
+    %label{:for => "username"} Username:
+    %input#username{:type => "text"}
+      {{/if}}
+
+      {{#if avatar}}
+      %img{:src => "{{avatar.url}}"}
+        {{/if}}
+        %label{:for => "avatar"} Avatar:
+        %input.avatar{:type => "file"}
+          %input#image_cache{:type => "hidden"}
+            %label{:for => "first_name"} First Name:
+            %input#first_name{:autofocus => "true", :type => "text", :value => "{{ first_name }}"}
+              %label{:for => "last_name"} Last Name:
+              %input#last_name{:type => "text", :value => "{{ last_name }}"}
+                %label{:for => "email"} Email:
+                %input#email{:type => "email", :value => "{{ email }}"}
+                  %label{:for => "location"} Location:
+                  %input#location{:type => "text", :value => "{{ location }}"}
+                    %label{:for => "password"} Password:
+                    %input#password{:type => "password"}
+                      %label{:for => "password_confirmation"} Confirm password:
+                      %input#password_confirmation{:type => "password"}
+                        %button Create
+/ /////////////////////////////////////////////user list template ////////////
+%script#users-list-template{:type => "text/template"}
+  %h2 List of Users
+  %ul
+    {{#each users}}
+    .user
+      %li.user-username {{username}}
+      .user-avatar
+        %li
+          %img{:src => "{{avatar.url}}"}/
+      %li.user-first-name {{first_name}}
+      %li.user-last-name {{last_name}}
+      %li.user-location {{location}}
+      %li.user-score {{score}}
+    / ///////// close user ///////
+    {{/each}}
+/ /////////////////////////////////////////////user acheivemnts template ////////////
+%script#user-achievements-list-template{:type => "text/template"}
+  %h2 List of Your acheivments
+  %ul
+    {{#each achievements}}
+    %li {{name}}
+    {{/each}}
+/ /////////////////////////////////////////////create pub template ////////////
+%script#create-pub-template{:type => "text/template"}
+  .sidebox
+  / ///// close sidebox /////
+  %h2 Create Pub
+  %form#create-pub-form{:action => "#", :enctype => "multipart/form-data"}
+    {{#if username}}
+    %label{:for => "username"} Username: {{username}}
+    {{^}}
+    %label{:for => "username"} Username:
+    %input#username{:type => "text"}
+      {{/if}}
+      %label{:for => "name"} Pub Name:
+      %input#name{:autofocus => "true", :type => "text", :value => "{{name}}"}
+        %label{:for => "address"} Address:
+        %input#address{:type => "text", :value => "{{address}}"}
+          %br
+            %label{:for => "image"} Image:
+            %br
+              %input.image{:type => "file"}
+                %input#image_cache{:type => "hidden", :value => "{{image_url}}"}
+                  %label{:for => "email"} Email:
+                  %input#email{:type => "email", :value => "{{email}}"}
+                    %label{:for => "description"} Description:
+                    %textarea#description{:rows => "5", :type => "textarea"} {{description}}
+                    %label{:for => "password"} Password:
+                    %input#password{:type => "password"}
+                      %label{:for => "confirm_password"} Confirm password:
+                      %input#confirm_password{:type => "password"}
+                        %button Create Pub
+/ /////////////////////////////////////////////PUB SINGLE MODEL template ////////////
+%script#pubs-single-model-template{:type => "text/template"}
+  %ul
+    .pub
+      .pub-name
+        %li {{name}}
+      .pub-image
+        %li
+          %img{:src => "{{image.thumb.url}}"}/
+      .pub-address
+        %li {{address}}
+      .pub-description
+        %li {{description}}
+      .view-button
+        %li View Challenges
+    / ///// close pub ///
+/ /////////////////////////////////////////////PUBS list template ////////////
+%script#pubs-list-template{:type => "text/template"}
+  %h2 List of Pubs
+  %ul#publist
+/ /////////////////////////////////////////////login template ////////////
+%script#login-template{:type => "text/template"}
+  #loginpage
+    #logintext
+      %h2 PUBCRAWLL
+      %p
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Goo
+    / //////////// close login text //////
+    #loginline
+    / //////////// close loginline //////
+    #login
+      %h3 SIGN IN
+      %form#login{:action => "#"}
+        %label{:for => "username"} Username:
+        %br
+          %input#username{:type => "text"}
+            %label{:for => "password"} Password:
+            %br
+              %input#password{:type => "password"}
+                %button Login In
+    / /////// close login //////
+  / /////// close loginpage //////
+/ /////////////////////////////////////////////pub challenge template ////////////
+%script#pub-challenge-template{:type => "text/template"}
+  %h2 Create Pub Challenge
+  %form#create-pub-challenge-form{:action => "#"}
+    %label{:for => "name"} Name Your Challenge:
+    %br
+      %input#name{:autofocus => "true", :type => "text"}
+        %br
+          %label{:for => "image"} Image:
+          %br
+            %input.image{:type => "file"}
+              %input#image_cache{:type => "hidden"}
+                %br
+                  %label{:for => "description"} Description:
+                  %br
+                    %input#description{:type => "text"}
+                      %br
+                        %label{:for => "bagde"} Badge:
+                        %br
+                          %input.badge{:type => "file"}
+                            %input#image_cache{:type => "hidden"}
+                              %br
+                                %label{:for => "point_value"} Point Value:
+                                %br
+                                  %select#point-value{:name => "Point Value"}
+                                    %option{:value => "5"} Five
+                                    %option{:value => "10"} Ten
+                                    %option{:value => "20"} Twenty
+                                    %option{:value => "30"} Thirty
+                                  %br
+                                    %button#create-challenge Create Pub Challenge
+/ /////////////////////////////////////////////new task pub challenge template ////////////
+%script#new-task-template{:type => "text/template"}
+  %label{:for => "task"} Task:
+  %br
+    %input.task{:name => "task", :type => "text"}
+      %br
+        %button#create-task Create Task
+/ /////////////////////////////////////////////pub challenge list template ////////////
+%script#pub-challenge-list-template{:type => "text/template"}
+  %h2 List of Pub Challenges
+  %ul
+    {{#each pubChallenges}}
+    .challenge-holder
+      %li.challenge-name {{name}}
+      %li.challenge-image
+        %img{:src => "{{image.url}}"}/
+      %li.challenge-description {{description}}
+      %li.challenge-badge
+        %img{:src => "{{badge.url}}"}/
+      %li.challenge-tasks
+        CHALLENGE!
+        %ol
+          {{#each this.tasks}}
+          %a{:href => "#qrcode"} <liclass="challenge-task-items">{{this}}
+      {{/each}}
+    / /////////close challenge holder ///////
+    {{/each}}
+/ /////////////////////////////////////////////pub challenge list template ////////////
+%script#pub-challenge-list-specific{:type => "text/template"}
+  %h2 List of Pub Challenges
+  %ul
+    {{#each pubChallenges}}
+    .challenge-holder
+      %li.challenge-name {{name}}
+      %li.challenge-image
+        %img{:src => "{{image.url}}"}/
+      %li.challenge-description {{description}}
+      %li.challenge-badge
+        %img{:src => "{{badge.url}}"}/
+      %li.challenge-tasks
+        CHALLENGE!
+        %ol
+          {{#each this.tasks}}
+          %a{:href => "#qrcode"} <liclass="challenge-task-items">{{this}}
+      {{/each}}
+    / /////////close challenge holder ///////
+    {{/each}}
+%script#find-pub-template{:type => "text/template"}
+  %h2 Find Pub
+  #map_canvas
+  / ///////////////////// close map ///////////////////////////////////////////////
+/ <button id="add-task">Add Task</button>
+/ <br>
+/ <label for='taskname'>Task: </label>
+/ <br>
+/ <input type='text' class='taskname'>
+/ <br>

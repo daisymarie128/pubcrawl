@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title Pubcrawl
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+    = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyAAiCRdJuc3KbZmfKzLhPkm4DAoG5-7lcA"
+  %body
+    #container
+      #main
+        %header
+          .title
+            %span pubcrawl
+          #login-functions
+            #user-bar
+          #site-navigation-bar
+        #content
+        = yield

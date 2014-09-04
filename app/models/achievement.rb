@@ -5,6 +5,7 @@
 #  id               :integer          not null, primary key
 #  user_id          :integer
 #  pub_challenge_id :integer
+#  completed        :boolean
 #
 
 class Achievement < ActiveRecord::Base

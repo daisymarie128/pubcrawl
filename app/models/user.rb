@@ -20,7 +20,7 @@
 
 class User < ActiveRecord::Base
   has_secure_password
-  mount_uploader :avatar, ImageUploader
+  mount_uploader :avatar, AvatarUploader
   has_many :followers, :dependent => :destroy
   has_many :friends, :through => :followers
   has_many :pub_challenges
