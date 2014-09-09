@@ -19,6 +19,31 @@ h2{
   background-color: #fff;
 }
 
+#landing {
+  padding: 5%;
+
+  .text {
+    display: inline-block;
+    width: 40%
+  }
+  .iphone-image {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+
+    img {
+      width: 100%
+    }
+
+  }
+
+  p {
+    font-size: 2em;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+  }
+}
+
 #main{
   width: 100%;
 }

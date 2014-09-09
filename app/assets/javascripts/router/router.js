@@ -22,6 +22,9 @@ app.Router = Backbone.Router.extend({
 
     var siteNavView = new app.SiteNavView();
     siteNavView.render();
+
+    var landing = app.templates.landingView;
+    $('#container').append(landing)
   },
 
   index: function () {

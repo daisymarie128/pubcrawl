@@ -16,7 +16,8 @@ $(document).ready(function () {
     pubChallengesListView: $('#pub-challenge-list-template').html(),
     pubChallengesListSpecific: $('#pub-challenge-list-specific').html(),
     usersAchievementsView: $('#user-achievements-list-template').html(),
-    findPubView: $('#find-pub-template').html()
+    findPubView: $('#find-pub-template').html(),
+    landingView: $('#landing-page-template').html()
   }
 
   $.ajaxSetup({
