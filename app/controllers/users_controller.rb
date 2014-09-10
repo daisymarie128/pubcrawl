@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     if @user.save
       # Tell the UserMailer to send a welcome email after save
       UserMailer.welcome_email(@user).deliver
-
+      session[:user_id] = @user.id
       ###Sends the User an email with sign_in_token
       UserMailer.registration_confirmation(@user, login_url+"/#{@user.sign_in_token}").deliver
 
