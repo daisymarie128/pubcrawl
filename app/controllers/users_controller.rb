@@ -18,8 +18,8 @@ class UsersController < ApplicationController
       ###Sends the User an email with sign_in_token
       # UserMailer.registration_confirmation(@user, login_url+"/#{@user.sign_in_token}").deliver
 
-      flash[:success] = "Please Check Your Email to Verify your Registration!"
-      redirect_to (verifyemail_path)
+      # flash[:success] = "Please Check Your Email to Verify your Registration!"
+      # redirect_to (verifyemail_path)
 
       render :json => @user
     else
