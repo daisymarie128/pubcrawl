@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :check_if_logged_in, :except => [:new, :create, :follow, :unfollow, :index]
+  before_action :check_if_logged_in, :except => [:new, :create, :index]
   #before_action :check_if_admin, :only => [:index]
   skip_before_action :verify_authenticity_token
   def new
@@ -13,10 +13,10 @@ class UsersController < ApplicationController
     @user.username = @user.username.downcase
     if @user.save
       # Tell the UserMailer to send a welcome email after save
-      UserMailer.welcome_email(@user).deliver
+      # UserMailer.welcome_email(@user).deliver
       session[:user_id] = @user.id
       ###Sends the User an email with sign_in_token
-      UserMailer.registration_confirmation(@user, login_url+"/#{@user.sign_in_token}").deliver
+      # UserMailer.registration_confirmation(@user, login_url+"/#{@user.sign_in_token}").deliver
 
       flash[:success] = "Please Check Your Email to Verify your Registration!"
       redirect_to (verifyemail_path)
