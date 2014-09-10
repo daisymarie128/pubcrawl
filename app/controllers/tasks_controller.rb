@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-
+  skip_before_action :verify_authenticity_token
   #all the tasks
   def index
     @task = Task.all
